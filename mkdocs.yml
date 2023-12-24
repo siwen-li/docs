@@ -1,0 +1,149 @@
+site_name: Siwen 
+copyright: Copyright © 2023 siwen
+
+
+theme:
+  name: material
+  language: zh
+  # logo: assets/logo.png
+
+  # font:
+  #   text: Roboto
+
+  icon:
+    annotation: material/plus-circle
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+
+  palette:
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: white
+      # accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking   # 锚点跟踪
+
+    # - toc.integrate # 导航集成 
+
+    - navigation.indexes
+
+    # 导航栏
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.path
+    # 目录锚点跟随
+    - toc.follow
+    - navigation.top
+
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    - navigation.footer  # 页脚
+    - content.code.copy  # 代码复制按钮
+    - content.code.annotate
+    - content.tabs.link  # 选项卡链接
+
+# nav:
+#   - 测试: 
+#       - 介绍: 
+#       - tags: tags.md
+
+
+extra:
+  homepage: https://example.com
+  # 社交链接
+  social:
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+
+  generator: false
+
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true  # 高亮
+      # auto_title: true  # 显示代码标题
+      linenums: true  # 添加行号
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+
+  - tables
+
+  # 内联代码
+  - pymdownx.highlight
+
+  - md_in_html
+
+  - pymdownx.critic
+  - pymdownx.caret
+
+  # 键盘键
+  - pymdownx.keys
+
+  # 字符序列转换为相应的符号
+  - pymdownx.smartsymbols
+  - pymdownx.mark
+  - pymdownx.tilde
+
+
+  # 图标和表情符号
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+  # 列表
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
+  # 启用告诫
+  - admonition
+  - pymdownx.details
+
+
+
+# js 
+extra_javascript:
+ - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+ - javascripts/tablesort.js
+
+# 自定义css
+extra_css:
+  - stylesheets/extra.css
+
+# 插件
+plugins:
+  - search  # 搜索
+  - glightbox  # 图片缩放
+  
+  - tags: # 标签
+      tags_file: tags.md
+
+
