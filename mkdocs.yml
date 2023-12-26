@@ -1,38 +1,50 @@
-site_name: Siwen 
-copyright: Copyright © 2023 siwen
+site_name: MyDocs 
+copyright: Copyright © 2023 - 2024 siwen
+
+# repo_name: siwen-li/docs
+# repo_url: https://github.com/siwen-li/docs
+# edit_uri: tree/main/docs
+# version: 1.0.0
 
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   # logo: assets/logo.png
-
-  # font:
-  #   text: Roboto
-
   icon:
-    annotation: material/plus-circle
-    previous: fontawesome/solid/angle-left
-    next: fontawesome/solid/angle-right
+    # logo: logo
+    repo: fontawesome/brands/github
+    edit: fontawesome/regular/pen-to-square
+
+  font:
+    text: Noto Sans SC
+    code: Fira Code
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.svg
+
+  # icon:
+  #   annotation: material/plus-circle
+  #   previous: fontawesome/solid/angle-left
+  #   next: fontawesome/solid/angle-right
 
   palette:
-
-    # Palette toggle for light mode
     - scheme: default
       primary: white
-      # accent: light blue
+      # accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/theme-light-dark
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - scheme: slate
-      primary: black
+      primary: grey
+      # accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/theme-light-dark
         name: Switch to light mode
 
   features:
+    - content.action.edit  # 编辑代码
+    - content.action.view
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
@@ -41,6 +53,7 @@ theme:
     # - toc.integrate # 导航集成 
 
     - navigation.indexes
+    
 
     # 导航栏
     - navigation.tabs
@@ -48,16 +61,16 @@ theme:
     - navigation.path
     # 目录锚点跟随
     - toc.follow
-    - navigation.top
 
     - search.suggest
-    - search.highlight
+    - search.highlight  # 搜索高亮
     - search.share
-    
+    - navigation.top
     - navigation.footer  # 页脚
     - content.code.copy  # 代码复制按钮
     - content.code.annotate
     - content.tabs.link  # 选项卡链接
+    - content.tooltips  # 工具提示 
 
 # nav:
 #   - 测试: 
@@ -69,8 +82,8 @@ extra:
   homepage: https://example.com
   # 社交链接
   social:
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/github
+      link: https://github.com/siwen-li
 
   generator: false
 
@@ -80,12 +93,25 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true  # 高亮
       # auto_title: true  # 显示代码标题
-      linenums: true  # 添加行号
+      # linenums: true  # 添加行号
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
+
+
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+
+  - footnotes
+  - md_in_html
 
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -95,9 +121,6 @@ markdown_extensions:
 
   # 内联代码
   - pymdownx.highlight
-
-  - md_in_html
-
   - pymdownx.critic
   - pymdownx.caret
 
@@ -119,9 +142,6 @@ markdown_extensions:
 
   # 列表
   - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-
 
   # 启用告诫
   - admonition
@@ -144,6 +164,6 @@ plugins:
   - glightbox  # 图片缩放
   
   - tags: # 标签
-      tags_file: tags.md
+      tags_file: index.md
 
 
