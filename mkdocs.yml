@@ -68,6 +68,7 @@ theme:
     - navigation.top
     - navigation.footer  # 页脚
     - content.code.copy  # 代码复制按钮
+    - content.code.select
     - content.code.annotate
     - content.tabs.link  # 选项卡链接
     - content.tooltips  # 工具提示 
@@ -121,7 +122,6 @@ markdown_extensions:
   - tables
 
   # 内联代码
-  - pymdownx.highlight
   - pymdownx.critic
   - pymdownx.caret
 
