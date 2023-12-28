@@ -162,3 +162,13 @@ body {
   height: auto;
   margin-right: 0.5em; /* Add some space between the SVG icon and the text */
 }
+
+/*提示栏宽度*/
+/* :root {
+  --md-tooltip-width: 600px;
+} */
+
+.md-tooltip__inner {
+  font-size: 0.64rem !important;
+  padding: 0.5rem;
+}
