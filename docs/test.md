@@ -71,7 +71,7 @@ comments: true
     aaa # (1)!
 ```
 
-1.  :man_raising_hand: 123
+1. :man_raising_hand: 123
 
 
 The `#!python range()` function is used to generate a sequence of numbers.

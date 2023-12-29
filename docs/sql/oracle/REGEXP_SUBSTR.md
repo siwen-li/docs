@@ -6,35 +6,28 @@ tags:
 
 # REGEXP_SUBSTR
 
-语法
+## 语法
 
 ![REGEXP_SUBSTR函数语法](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/img/regexp_substr.gif)
 
-用途
+=== "用途"
+    !!! note "用途"
 
-`REGEXP_SUBSTR` 通过允许您在字符串中搜索正则表达式模式来扩展 `SUBSTR` 函数的功能。它与 `REGEXP_INSTR` 也类似,但是它返回匹配子字符串本身,而不是返回子字符串的位置。如果你需要匹配字符串的内容但不需要它在源字符串中的位置,这个函数很有用。该函数以与 `source_char` 相同的字符集返回字符串,为 `VARCHAR2` 或 `CLOB` 数据类型。
+        `REGEXP_SUBSTR` 通过允许您在字符串中搜索正则表达式模式来扩展 `SUBSTR` 函数的功能。它与 `REGEXP_INSTR` 也类似,但是它返回匹配子字符串本身,而不是返回子字符串的位置。如果你需要匹配字符串的内容但不需要它在源字符串中的位置,这个函数很有用。该函数以与 `source_char` 相同的字符集返回字符串,为 `VARCHAR2` 或 `CLOB` 数据类型。
 
-此函数符合 POSIX 正则表达式标准和 Unicode 正则表达式准则。有关更多信息,请参阅 [[Oracle正则表达式支持]]。
+=== "参数说明"
+    !!! abstract annotate "参数"
 
-- `source_char` 是字符表达式,用作搜索值。它通常是一个字符列,可以是 `CHAR`、`VARCHAR2`、`NCHAR`、`NVARCHAR2`、`CLOB` 或 `NCLOB` 数据类型。
+        - `source_char` 是字符表达式,用作搜索值。
+        - `pattern` 是正则表达式。它通常是一个文本字面量。
+        - `position` 是一个正整数,指示 Oracle 应开始搜索 `source_char` 的字符位置。默认值为 1。
+        - `occurrence` 是一个正整数,指示 Oracle 应在 `source_char` 中搜索 `pattern` 的第几次出现。默认值为 1。 (1)
+        - `match_param` 是 `VARCHAR2` 或 `CHAR` 数据类型的字符表达式,它允许您更改函数的默认匹配行为。
+        - 对于具有子表达式的 `pattern`,`subexpr` 是一个非负整数,范围从 0 到 9,用于指示函数应返回 `pattern` 中的哪个子表达式。
+  
+    1.  如果 `occurrence` 大于 1,则数据库会从第一个 `pattern` 匹配之后的第一个字符开始搜索第二次出现,依此类推。
 
-- `pattern` 是正则表达式。它通常是一个文本字面量,可以是 `CHAR`、`VARCHAR2`、`NCHAR` 或 `NVARCHAR2` 数据类型。它可以包含多达 512 个字节。如果 `pattern` 的数据类型与 `source_char` 的数据类型不同,则 Oracle 数据库会将 `pattern` 转换为 `source_char` 的数据类型。有关可以在 `pattern` 中指定的运算符列表,请参阅 [[Oracle正则表达式支持]]。
 
-- `position` 是一个正整数,指示 Oracle 应开始搜索 `source_char` 的字符位置。默认值为 1,表示 Oracle 从 `source_char` 的第一个字符开始搜索。
-
-- `occurrence` 是一个正整数,指示 Oracle 应在 `source_char` 中搜索 `pattern` 的第几次出现。默认值为 1,表示 Oracle 搜索 `pattern` 的第一次出现。
-
-  如果 `occurrence` 大于 1,则数据库会从第一个 `pattern` 匹配之后的第一个字符开始搜索第二次出现,依此类推。此行为不同于 `SUBSTR` 函数,后者从第一个匹配的第二个字符开始搜索第二次出现。
-
-- `match_param` 是 `VARCHAR2` 或 `CHAR` 数据类型的字符表达式,它允许您更改函数的默认匹配行为。 此参数对此函数的行为与 `REGEXP_COUNT` 中的行为相同。 有关详细信息,请参阅 [[REGEXP_COUNT]]。
-
-- 对于具有子表达式的 `pattern`,`subexpr` 是一个非负整数,范围从 0 到 9,用于指示函数应返回 `pattern` 中的哪个子表达式。 此参数具有与 `REGEXP_INSTR` 函数相同的语义。 有关更多信息,请参阅 [[REGEXP_INSTR]]。
-
-另请参阅:
-
-- [SUBSTR](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/SUBSTR.html#GUID-C8A20B57-C647-4649-A379-8651AA97187E) 和 [[REGEXP_INSTR]]
-- [[REGEXP_REPLACE]] 和 [[REGEXP_LIKE#REGEXP_LIKE 条件|REGEXP_LIKE 条件]]
-- [*Oracle 数据库全球化支持指南*](https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19/sqlrf&id=NLSPG-GUID-AFCE41ED-775B-4A00-AF38-C436776AE0C5) 的附录 C,其中包含确定 `REGEXP_SUBSTR` 用于比较 `source_char` 中的字符与 `pattern` 中的字符的整理规则,以及确定此函数的字符返回值的派生整理规则
 
 ### 示例 
 
