@@ -6,7 +6,36 @@ repo_url: https://github.com/siwen-li/docs
 version: 1.0.0
 edit_uri: edit/main/docs/
 
+# 导航 
+nav:
+  - 标签:
+    - index.md 
+  - 测试页:
+    - test.md 
+  - SQL:
+    # - MySQL: 
+    - Oracle: 
+        # - sql/oracle/index.md
+        - Oracle 正则表达式: sql/oracle/Oracle_regular_expression.md
+        - REGEXP_COUNT 函数: sql/oracle/REGEXP_COUNT.md
+        - REGEXP_INSTR 函数: sql/oracle/REGEXP_INSTR.md
+        - REGEXP_REPLACE 函数: sql/oracle/REGEXP_REPLACE.md
+        - REGEXP_SUBSTR 函数: sql/oracle/REGEXP_SUBSTR.md
+        - REGEXP_LIKE 函数: sql/oracle/REGEXP_LIKE.md
+        
 
+        - Oracle 层次查询: sql/oracle/Hierarchical_Queries.md
+        - Oracle 层次查询运算符: sql/oracle/Hierarchical_Query_Operators.md
+        - Oracle 层次查询伪列: sql/oracle/Hierarchical_Query_Pseudocolumns.md
+        - SYS_CONNECT_BY_PATH 函数: sql/oracle/SYS_CONNECT_BY_PATH.md  
+  - Linux:
+    - Linux 正则表达式: linux/Linunx_regular_expression.md
+    - grep 命令: linux/grep.md
+    - sed 命令: linux/sed.md
+    - awk 命令: linux/awk.md
+    - awk 编程: linux/awk_programming.md
+
+    
 theme:
   name: material
   custom_dir: overrides
@@ -72,11 +101,7 @@ theme:
     - content.code.annotate
     - content.tabs.link  # 选项卡链接
     - content.tooltips  # 工具提示 
-
-# nav:
-#   - 测试: 
-#       - 介绍: 
-#       - tags: tags.md
+    
 
 
 extra:
@@ -168,5 +193,7 @@ plugins:
   
   - tags: # 标签
       tags_file: index.md
+
+  
 
 

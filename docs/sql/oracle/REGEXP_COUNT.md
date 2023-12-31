@@ -1,5 +1,4 @@
 ---
-comments: true
 tags:
   - sql
   - oracle
@@ -17,7 +16,7 @@ tags:
 
         `regexp_count` 函数补充了 [regexp_instr](./REGEXP_INSTR.md) 函数的功能,它返回模式在源字符串中出现的次数。该函数使用字符集定义的字符来评估字符串。它返回一个整数,表示 `pattern` 出现的次数。如果未找到匹配,则该函数返回 0。 (1)
 
-    1.  :man_tipping_hand: `regexp_count` 忽略 `pattern` 中的子表达式括号。
+    1.  `regexp_count` 忽略 `pattern` 中的子表达式括号。
 
 
 === "参数说明"
@@ -28,7 +27,7 @@ tags:
         - `position` 是一个正整数,指示 Oracle 应开始搜索 `source_char` 的字符位置。默认为 1。 
         - `match_param` 指定匹配规则。 (1)  
 
-    1.  :man_tipping_hand: `match_param` 的值可以包含以下一个或多个字符:
+    1.  `match_param` 的值可以包含以下一个或多个字符:
         - `'i'` 指定不区分大小写的匹配。
         - `'c'` 指定区分大小写和重音符号的匹配。
         - `'n'` 允许句点(.)这个通配符匹配换行符。
@@ -67,9 +66,6 @@ from dual; -- (1)!
         ----------
                 3
 
-<br>
-
-### regexp_count 简单匹配: 示例
 验证提供的字符串是否符合给定的模式,并返回字母字符的数量:
 
 ```sql
@@ -137,10 +133,6 @@ from dual; -- (1)!
         ---------------------------------------- ----------------------------------------
                                             0                                        1
 
-<br>
-
-### regexp_count 高级匹配: 示例
-
 验证提供的字符串是否符合给定的模式,并返回字母字符的数量:
 
 ```sql
@@ -206,11 +198,7 @@ from dual; -- (1)!
         ------------------------ ------------------------
                     0			  1
 
-<br>
-
-### regexp_count 区分大小写匹配:示例
-
-下面的语句创建表 regexp_temp 并向其中插入值:
+创建表 regexp_temp 并向其中插入值:
 
 ```sql
 create table regexp_temp(empName varchar2(20));
@@ -219,7 +207,7 @@ insert into regexp_temp (empName) values ('John Doe');
 insert into regexp_temp (empName) values ('Jane Doe'); 
 ```
 
-在下面的示例中,该语句查询员工姓名列,并搜索小写字母 ‘E’:
+查询员工姓名列,并搜索小写字母 ‘E’ 出现的次数:
 
 ```sql
 select empName
@@ -233,7 +221,8 @@ from regexp_temp; -- (1)!
         John Doe		    1
         Jane Doe		    2
 
-在下面的示例中,该语句查询员工姓名列,并搜索小写或大写字母 ‘E’:
+
+查询员工姓名列,并搜索小写或大写字母 ‘E’ 出现的次数:
 
 ```sql
 select empName
@@ -247,7 +236,8 @@ from regexp_temp; -- (1)!
         John Doe		      1
         Jane Doe		      2
 
-在下面的示例中,该语句查询员工姓名列,并搜索小写或大写字符串 ‘DO’:
+
+查询员工姓名列,并搜索小写或大写字符串 ‘DO’ 出现的次数:
 
 ```sql 
 SELECT empName
