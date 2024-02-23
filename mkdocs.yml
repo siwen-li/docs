@@ -10,8 +10,8 @@ edit_uri: edit/main/docs/
 nav:
   - 标签:
     - index.md 
-  - 测试页:
-    - test.md 
+  # - 测试页:
+  #   - test.md 
   - SQL:
     # - MySQL: 
     - Oracle: 
@@ -28,6 +28,8 @@ nav:
         - Oracle 层次查询运算符: sql/oracle/Hierarchical_Query_Operators.md
         - Oracle 层次查询伪列: sql/oracle/Hierarchical_Query_Pseudocolumns.md
         - SYS_CONNECT_BY_PATH 函数: sql/oracle/SYS_CONNECT_BY_PATH.md  
+        - 递归查询示例: sql/oracle/Recursive_Query_Example.md
+
   - Linux:
     - Linux 正则表达式: linux/Linunx_regular_expression.md
     - grep 命令: linux/grep.md
@@ -72,8 +74,8 @@ theme:
         name: Switch to light mode
 
   features:
-    - content.action.edit  # 编辑代码
-    - content.action.view
+    # - content.action.edit  # 编辑代码
+    # - content.action.view
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
@@ -99,7 +101,7 @@ theme:
     - content.code.copy  # 代码复制按钮
     - content.code.select
     - content.code.annotate
-    - content.tabs.link  # 选项卡链接
+    # - content.tabs.link  # 选项卡链接
     - content.tooltips  # 工具提示 
     
 
