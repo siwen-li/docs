@@ -16,28 +16,28 @@ nav:
     # - MySQL: 
     - Oracle: 
         # - sql/oracle/index.md
-        - Oracle 正则表达式: SQL/Oracle/Oracle_regular_expression.md
-        - REGEXP_COUNT 函数: SQL/Oracle/REGEXP_COUNT.md
-        - REGEXP_INSTR 函数: SQL/Oracle/REGEXP_INSTR.md
-        - REGEXP_REPLACE 函数: SQL/Oracle/REGEXP_REPLACE.md
-        - REGEXP_SUBSTR 函数: SQL/Oracle/REGEXP_SUBSTR.md
-        - REGEXP_LIKE 函数: SQL/Oracle/REGEXP_LIKE.md
+        - Oracle 正则表达式: sql/oracle/Oracle_regular_expression.md
+        - REGEXP_COUNT 函数: sql/oracle/REGEXP_COUNT.md
+        - REGEXP_INSTR 函数: sql/oracle/REGEXP_INSTR.md
+        - REGEXP_REPLACE 函数: sql/oracle/REGEXP_REPLACE.md
+        - REGEXP_SUBSTR 函数: sql/oracle/REGEXP_SUBSTR.md
+        - REGEXP_LIKE 函数: sql/oracle/REGEXP_LIKE.md
         
 
-        - Oracle 层次查询: SQL/Oracle/Hierarchical_Queries.md
-        - Oracle 层次查询运算符: SQL/Oracle/Hierarchical_Query_Operators.md
-        - Oracle 层次查询伪列: SQL/Oracle/Hierarchical_Query_Pseudocolumns.md
-        - SYS_CONNECT_BY_PATH 函数: SQL/Oracle/SYS_CONNECT_BY_PATH.md  
-        - 递归查询示例: SQL/Oracle/Recursive_Query_Example.md
+        - Oracle 层次查询: sql/oracle/Hierarchical_Queries.md
+        - Oracle 层次查询运算符: sql/oracle/Hierarchical_Query_Operators.md
+        - Oracle 层次查询伪列: sql/oracle/Hierarchical_Query_Pseudocolumns.md
+        - SYS_CONNECT_BY_PATH 函数: sql/oracle/SYS_CONNECT_BY_PATH.md  
+        - 递归查询示例: sql/oracle/Recursive_Query_Example.md
     # - Other:
-    #     - 窗口函数: SQL/Other/window_function.md
+    #     - 窗口函数: sql/other/window_function.md
 
   - Linux:
-    - Linux 正则表达式: Linux/Linunx_regular_expression.md
-    - grep 命令: Linux/grep.md
-    - sed 命令: Linux/sed.md
-    - awk 命令: Linux/awk.md
-    - awk 编程: Linux/awk_programming.md
+    - Linux 正则表达式: linux/Linunx_regular_expression.md
+    - grep 命令: linux/grep.md
+    - sed 命令: linux/sed.md
+    - awk 命令: linux/awk.md
+    - awk 编程: linux/awk_programming.md
 
     
 theme:
