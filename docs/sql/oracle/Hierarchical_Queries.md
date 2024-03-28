@@ -2,6 +2,7 @@
 tags:
   - sql
   - oracle
+
 ---
 
 
@@ -9,54 +10,56 @@ tags:
 
 ## 语法
 
-![层次查询子句语法](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/img/hierarchical_query_clause.gif)
+![层次查询子句语法](./assets/hierarchical_query_clause.gif)
 
 !!! abstract annotate 
 
     - `condition` 可以是任何条件。
     - `START WITH` 指定层次结构的根行。
     - `CONNECT BY` 指定父行和子行之间的关系。
-    - `NOCYCLE` 参数指示 Oracle 数据库即使数据中存在 `CONNECT BY` 循环也返回行。将此参数与 [`CONNECT_BY_ISCYCLE`](./Hierarchical_Query_Pseudocolumns.md#connect_by_iscycle-伪列) 伪列一起使用,以查看包含循环的行。
-    - 在层次查询中,`condition` 中的一个表达式必须使用 `PRIOR` 运算符限定,以引用父行。例如:
-
+    - `NOCYCLE` 参数指示 Oracle 数据库即使数据中存在 `CONNECT BY` 循环也返回行。将此参数与 [`CONNECT_BY_ISCYCLE`](./Hierarchical_Query_Pseudocolumns.md#connect_by_iscycle-伪列) 伪列一起使用, 以查看包含循环的行。
+    - 在层次查询中, `condition` 中的一个表达式必须使用 `PRIOR` 运算符限定, 以引用父行。例如:
+    
       ```sql
       ... PRIOR expr = expr
       或
       ... expr = PRIOR expr
       ```
       
-      - `PRIOR` 是一元运算符,与一元 + 和 - 算术运算符具有相同的优先级。它对层次查询中当前行的父行求值紧跟其后的表达式。
+    - `PRIOR` 是一元运算符, 与一元 + 和 - 算术运算符具有相同的优先级。它对层次查询中当前行的父行求值紧跟其后的表达式。
+  
+        > `PRIOR` 最常用于将列值与相等运算符进行比较。
 
-      `PRIOR` 最常用于将列值与相等运算符进行比较。 (1)
+        > `PRIOR` 关键字可以在运算符的任一侧，**prior 在哪一侧，就是向哪一侧递归查询。**
 
-1.  `PRIOR` 关键字可以在运算符的任一侧，**prior在哪一侧，就是向哪一侧递归查询。**
+    
 
 
 ### Oracle 处理层次查询
 
-- 首先评估联接(如果存在),无论联接是在 `FROM` 子句中指定还是用 `WHERE` 子句谓词指定。
+- 首先评估联接(如果存在), 无论联接是在 `FROM` 子句中指定还是用 `WHERE` 子句谓词指定。
 - 评估 `CONNECT BY` 条件。 
 - 评估任何其余的 `WHERE` 子句谓词。
 
-??? quote "形成层次结构的步骤"
+???+ quote "形成层次结构的步骤"
 
-     1. Oracle选择层次结构的根行,即满足 `START WITH` 条件的行。
-     2. Oracle选择每个根行的子行。每个子行必须满足与其中一个根行相关的 `CONNECT BY` 条件。
-     3. Oracle选择后代子行的后续代。Oracle首先选择步骤[2]中返回的行的子行,然后是这些子行的子行,依此类推。Oracle始终通过评估与当前父行相关的 `CONNECT BY` 条件来选择子行。
-     4. 如果查询包含没有联接的 `WHERE` 子句,则 Oracle 从层次结构中删除不满足 `WHERE` 子句条件的所有行。Oracle对每行单独评估此条件,而不是删除不满足条件的行的所有子行。
-     5. Oracle以下图所示的顺序返回行。在图中,子项出现在其父项下方。
+     1. Oracle 选择层次结构的根行, 即满足 `START WITH` 条件的行。
+     2. Oracle 选择每个根行的子行。每个子行必须满足与其中一个根行相关的 `CONNECT BY` 条件。
+     3. Oracle 选择后代子行的后续代。Oracle 首先选择步骤 [2] 中返回的行的子行, 然后是这些子行的子行, 依此类推。Oracle 始终通过评估与当前父行相关的 `CONNECT BY` 条件来选择子行。
+     4. 如果查询包含没有联接的 `WHERE` 子句, 则 Oracle 从层次结构中删除不满足 `WHERE` 子句条件的所有行。Oracle 对每行单独评估此条件, 而不是删除不满足条件的行的所有子行。
+     5. Oracle 以下图所示的顺序返回行。在图中, 子项出现在其父项下方。
+    
+    ![层次查询](./assets/sqlrf002.gif)
 
-     ![层次查询](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/img/sqlrf002.gif)
+要查找父行的子行, Oracle 会对父行的 `PRIOR` 表达式进行求值, 并对表中的每一行求值 `CONNECT BY` 条件中的其他表达式。条件为真的行是父行的子行。`CONNECT BY` 条件可以包含其他条件来进一步过滤查询选择的行。
 
-要查找父行的子行,Oracle会对父行的 `PRIOR` 表达式进行求值,并对表中的每一行求值 `CONNECT BY` 条件中的其他表达式。条件为真的行是父行的子行。`CONNECT BY` 条件可以包含其他条件来进一步过滤查询选择的行。
-
-如果 `CONNECT BY` 条件导致层次结构中的循环,则 Oracle 返回错误。如果一行既是另一行的父行(或祖父行或直接祖先)也是其子行(或孙行或直接后代),则会发生循环。
+如果 `CONNECT BY` 条件导致层次结构中的循环, 则 Oracle 返回错误。如果一行既是另一行的父行(或祖父行或直接祖先)也是其子行(或孙行或直接后代), 则会发生循环。
 
 !!! warning annotate 
-    在层次查询中,指定 `ORDER BY` 或 `GROUP BY` 会覆盖 `CONNECT BY` 结果的层次顺序。如果要对具有相同父级的同级行进行排序,请使用 `ORDER SIBLINGS BY` 子句。 (1)
- 
+    在层次查询中, 指定 `ORDER BY` 或 `GROUP BY` 会覆盖 `CONNECT BY` 结果的层次顺序。如果要对具有相同父级的同级行进行排序, 请使用 `ORDER SIBLINGS BY` 子句。 (1)
+
 1.  *order_by_clause*::=
-    ![order by](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/img/order_by_clause.gif)
+    ![order by](./assets/order_by_clause.gif)
 
 
 
@@ -114,7 +117,7 @@ EMPLOYEE_ID LAST_NAME                 MANAGER_ID      LEVEL
 
 ### START WITH 示例
 
-添加 `START WITH` 子句以指定层次结构的根行,并使用 `SIBLINGS` 关键字的 `ORDER BY` 子句在层次结构内保留排序:
+添加 `START WITH` 子句以指定层次结构的根行, 并使用 `SIBLINGS` 关键字的 `ORDER BY` 子句在层次结构内保留排序:
 
 ```sql
 select last_name, employee_id, manager_id, level
@@ -144,7 +147,7 @@ Ande                              166        147          3
 Banda                             167        147          3
 ```
 
-在 `hr.employees` 表中,员工 Steven King 是公司的负责人,没有经理。他的员工中有 John Russell,Russell 是部门 80 的经理。如果将 Russell 设置为 King 的经理更新 `employees` 表,将在数据中创建一个循环:
+在 `hr.employees` 表中, 员工 Steven King 是公司的负责人, 没有经理。他的员工中有 John Russell, Russell 是部门 80 的经理。如果将 Russell 设置为 King 的经理更新 `employees` 表, 将在数据中创建一个循环:
 
 ```sql
 update employees
@@ -213,7 +216,7 @@ LTRIM(SYS_CONNECT_BY_PATH(WAREHOUSE_ID,','),',')
 
 ### CONNECT_BY_ROOT 示例
 
-返回部门 110 中每个员工的姓、该员工在层次结构中高于其的最高级经理的姓、经理和员工之间的级别数,以及它们之间的路径:
+返回部门 110 中每个员工的姓、该员工在层次结构中高于其的最高级经理的姓、经理和员工之间的级别数, 以及它们之间的路径:
 
 ```sql 
 select last_name                           "Employee"

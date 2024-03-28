@@ -8,10 +8,10 @@ tags:
 
 ## 语法
 
-![SYS_CONNECT_BY_PATH语法](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/img/sys_connect_by_path.gif)
+![SYS_CONNECT_BY_PATH 语法](./assets/sys_connect_by_path.gif)
 
 !!! note "用途"
-    `SYS_CONNECT_BY_PATH`仅在层次查询中有效。它返回从根到节点的列值路径,用 `char` 为每个由 `CONNECT BY` 条件返回的行分隔列值。`column` 和 `char` 都可以是任何数据类型。
+    `SYS_CONNECT_BY_PATH` 仅在层次查询中有效。它返回从根到节点的列值路径, 用 `char` 为每个由 `CONNECT BY` 条件返回的行分隔列值。`column` 和 `char` 都可以是任何数据类型。
 
 
 ## 示例

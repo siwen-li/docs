@@ -35,11 +35,10 @@ commit;
 select * from t_area; -- (1)!
 ```
 
-1.  ![Alt text](./img/img1.png)
+1.  ![Alt text](./assets/img1.png)
 
 
-表中数据的关系如下图：
-![Alt text](./img/tree.png)
+表中数据的关系如下图：![Alt text](./assets/tree.png)
 
 ## 示例
 
@@ -57,13 +56,12 @@ start with parrent_id is null
 connect by prior id = parrent_id;  -- (1)
 ```
 
-1.  ![Alt text](./img/img2.png)
+1.  ![Alt text](./assets/img2.png)
 
 ???+ note annotate "说明"
     - `oracle` 中可以使用 `start with xxx connect by prior xxx` 语句实现递归 
-    - `prior` 后面一般跟一个等式，可以跟在等式的任意一边 (1)
-
-1.  `prior` 跟在谁的前面，就是向谁递归 
+    - `prior` 后面一般跟一个等式，可以跟在等式的任意一边
+    - `prior` **跟在谁的前面，就是向谁递归**
 
 找出“贵州省”下面的所有行政区
 
@@ -76,7 +74,7 @@ start with name = '贵州省'
 connect by prior id = parrent_id;  -- (1)
 ```
 
-1.  ![Alt text](./img/img3.png)
+1.  ![Alt text](./assets/img3.png)
 
 找出“贵州省”下面的所有市级及以上行政区
 
@@ -90,7 +88,7 @@ start with name = '贵州省'
 connect by prior id = parrent_id;  -- (1)
 ```
 
-1.  ![Alt text](./img/img4.png)  
+1.  ![Alt text](./assets/img4.png)  
 
 找出“西秀区”的所有上级行政区
 
@@ -103,11 +101,11 @@ start with name = '西秀区'
 connect by id = prior parrent_id;  -- (1)
 ```
 
-1.  ![Alt text](./img/img5.png)  
+1.  ![Alt text](./assets/img5.png)  
 
 
-## 扩展1
- 
+## 扩展 1
+
 
 现在不使用 `satrt with connect by` 来实现以下几个需求：
 
@@ -124,7 +122,7 @@ where a.name = '贵州省'
 and a.id = b.parrent_id; -- (1)
 ```
 
-1.  ![Alt text](img/img4.png)
+1.  ![Alt text](./assets/img4-1711627596234-13.png)
 
 找出“贵州省”下面的所有区级及以上行政区
 ```sql
@@ -146,7 +144,7 @@ join t_area b
 on a.id = b.parrent_id; -- (1)
 ```
 
-1.  ![Alt text](img/img6.png)
+1.  ![Alt text](./assets/img6.png)
 
 
 ???+ tip annotate "with 递归查询 (CTE)"
@@ -170,7 +168,7 @@ as
 select * from tmp;  -- (1)
 ```
 
-1.  ![Alt text](./img/img3.png)
+1.  ![Alt text](./assets/img3-1711627612981-16.png)
 
 
 找出“西秀区”的所有上级行政区
@@ -188,7 +186,7 @@ as
 select * from tmp; -- (1)
 ```
 
-1.  ![Alt text](./img/img5.png)
+1.  ![Alt text](./assets/img5-1711627617648-18.png)
 
 使用 `with` 递归查询实现 `oracle` 层次查询中的 `level` 和 `sys_connect_by_path`
 ```sql
@@ -205,10 +203,10 @@ as
 select * from tmp; -- (1)
 ```
 
-1.  ![Alt text](img/img7.png)
+1.  ![Alt text](./assets/img7.png)
 
 
-## 扩展2 
+## 扩展 2 
 
 **利用递归查询生成连续数字、日期等**
 
