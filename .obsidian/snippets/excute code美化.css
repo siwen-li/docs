@@ -1,0 +1,41 @@
+button.clear-button {
+    display: none;
+    color: var(--text-muted);
+    font-size: var(--font-ui-smaller);
+    font-family: var(--font-interface);
+    position: absolute;
+    bottom: 0px;
+    left:unset;
+    right: 45px;
+    margin: 4px;
+    padding: 2px 4px;
+    z-index: 100;
+    width: 40px;
+    height: 20px;
+}
+
+button.run-code-button {
+    display: none;
+    color: var(--text-muted);
+    font-size: var(--font-ui-smaller);
+    font-family: var(--font-interface);
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin: 4px;
+    padding: 2px 4px;
+    z-index: 100;
+    width: 40px;
+    height: 20px;
+}
+
+button:hover {
+    background-color: var(--background-modifier-hover);
+    box-shadow: var(--input-shadow-hover);
+}
+
+pre:hover code.language-output {
+    margin-bottom: 0px;
+}
+
+

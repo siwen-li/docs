@@ -1,0 +1,24 @@
+pre code[class*="language-"] {
+  padding: 0em 0em;
+}
+
+:is(.markdown-preview-view,.markdown-rendered) pre {
+    background-color: var(--background-code);
+    padding: 1em 1.5em;
+}
+
+.markdown-rendered button.copy-code-button {
+    margin: 4px;
+    padding: 2px 8px;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-muted);
+    font-size: var(--font-ui-smaller);
+    font-family: var(--font-interface);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.6em;
+}
+

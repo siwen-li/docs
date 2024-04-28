@@ -1,0 +1,24 @@
+
+.kbd kbd {
+    box-shadow: 0 -6px 10px rgb(255, 255, 255),0 4px 15px rgba(0, 0, 0,0.3);
+    width: 3em;
+    margin:0.2em;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: pointer;
+    user-select: none;
+    color: #e73d09;
+    font-family: var(--font-monospace);
+    padding: 0.15em 0.5em;
+}
+.kbd kbd:active{
+    box-shadow:0 0 4px 0 rgba(0, 0, 0,0.15);
+    color: rgb(12, 164, 190);
+    text-shadow:  0 0 15px #57c1f1;
+}
+
+
+
+ 

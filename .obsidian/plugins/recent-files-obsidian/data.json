@@ -1,0 +1,203 @@
+{
+  "recentFiles": [
+    {
+      "basename": "sed",
+      "path": "docs/linux/sed.md"
+    },
+    {
+      "basename": "awk",
+      "path": "docs/linux/awk.md"
+    },
+    {
+      "basename": "grep",
+      "path": "docs/linux/grep.md"
+    },
+    {
+      "basename": "Linunx_regular_expression",
+      "path": "docs/linux/Linunx_regular_expression.md"
+    },
+    {
+      "basename": "awk_programming",
+      "path": "docs/linux/awk_programming.md"
+    },
+    {
+      "basename": "awk",
+      "path": "notes/docs/docs/linux/awk.md"
+    },
+    {
+      "basename": "01_认识Python",
+      "path": "notes/python/python01/01_认识Python.md"
+    },
+    {
+      "basename": "修改键盘映射",
+      "path": "修改键盘映射.md"
+    },
+    {
+      "basename": "正则表达式",
+      "path": "正则表达式.md"
+    },
+    {
+      "basename": "code tab",
+      "path": "code tab.md"
+    },
+    {
+      "basename": "cssclass说明",
+      "path": "cssclass说明.md"
+    },
+    {
+      "basename": "js脚本",
+      "path": "js脚本.md"
+    },
+    {
+      "basename": "numpy",
+      "path": "numpy.md"
+    },
+    {
+      "basename": "home",
+      "path": "home.md"
+    },
+    {
+      "basename": "git备份",
+      "path": "git备份.md"
+    },
+    {
+      "basename": "normal 移动的快捷方式：",
+      "path": "notes/linux/normal 移动的快捷方式：.md"
+    },
+    {
+      "basename": "天气预报",
+      "path": "Template/侧边栏/天气预报.md"
+    },
+    {
+      "basename": "14_异常",
+      "path": "notes/python/python02/14_异常.md"
+    },
+    {
+      "basename": "01.08-循环结构",
+      "path": "notes/python/python0/01.08-循环结构.md"
+    },
+    {
+      "basename": "Python基础",
+      "path": "notes/linux/Python基础.md"
+    },
+    {
+      "basename": "01_认识numpy",
+      "path": "notes/python/numpy/01_认识numpy.md"
+    },
+    {
+      "basename": "tree",
+      "path": "Excalidraw/tree.md"
+    },
+    {
+      "basename": "01.07-分支结构",
+      "path": "notes/python/python0/01.07-分支结构.md"
+    },
+    {
+      "basename": "01.11-面向对象",
+      "path": "notes/python/python0/01.11-面向对象.md"
+    },
+    {
+      "basename": "python运算符",
+      "path": "notes/linux/python运算符.md"
+    },
+    {
+      "basename": "17_函数进阶",
+      "path": "notes/python/python01/17_函数进阶.md"
+    },
+    {
+      "basename": "16_变量进阶（理解）",
+      "path": "notes/python/python01/16_变量进阶（理解）.md"
+    },
+    {
+      "basename": "15_综合应用 —— 名片管理系统",
+      "path": "notes/python/python01/15_综合应用 —— 名片管理系统.md"
+    },
+    {
+      "basename": "12_循环",
+      "path": "notes/python/python01/12_循环.md"
+    },
+    {
+      "basename": "11_运算符",
+      "path": "notes/python/python01/11_运算符.md"
+    },
+    {
+      "basename": "10_判断（if）语句",
+      "path": "notes/python/python01/10_判断（if）语句.md"
+    },
+    {
+      "basename": "09_变量的命名",
+      "path": "notes/python/python01/09_变量的命名.md"
+    },
+    {
+      "basename": "08_变量的基本使用",
+      "path": "notes/python/python01/08_变量的基本使用.md"
+    },
+    {
+      "basename": "07_程序执行原理（科普）",
+      "path": "notes/python/python01/07_程序执行原理（科普）.md"
+    },
+    {
+      "basename": "06_算数运算符",
+      "path": "notes/python/python01/06_算数运算符.md"
+    },
+    {
+      "basename": "05_注释",
+      "path": "notes/python/python01/05_注释.md"
+    },
+    {
+      "basename": "02_第一个Python程序",
+      "path": "notes/python/python01/02_第一个Python程序.md"
+    },
+    {
+      "basename": "01_预备知识",
+      "path": "notes/python/pandas/01_预备知识.md"
+    },
+    {
+      "basename": "层次查询伪列",
+      "path": "notes/sql/oracle/层次查询伪列.md"
+    },
+    {
+      "basename": "01.01-初识Python",
+      "path": "notes/python/python0/01.01-初识Python.md"
+    },
+    {
+      "basename": "linux三剑客",
+      "path": "notes/linux/linux三剑客.md"
+    },
+    {
+      "basename": "交换两个数的值",
+      "path": "notes/linux/交换两个数的值.md"
+    },
+    {
+      "basename": "层次查询",
+      "path": "notes/sql/oracle/层次查询.md"
+    },
+    {
+      "basename": "14_高级变量类型",
+      "path": "notes/python/python01/14_高级变量类型.md"
+    },
+    {
+      "basename": "linux操作系统",
+      "path": "notes/linux/linux操作系统.md"
+    },
+    {
+      "basename": "shell脚本",
+      "path": "notes/linux/shell脚本.md"
+    },
+    {
+      "basename": "SYS_CONNECT_BY_PATH",
+      "path": "notes/sql/oracle/SYS_CONNECT_BY_PATH.md"
+    },
+    {
+      "basename": "未命名 5",
+      "path": "notes/python/numpy/未命名 5.md"
+    },
+    {
+      "basename": "05_numpy矩阵和向量",
+      "path": "notes/python/numpy/05_numpy矩阵和向量.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null,
+  "openType": "tab"
+}

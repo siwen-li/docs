@@ -1,0 +1,5 @@
+.modal{
+    --dialog-width: 50vw !important;
+    --dialog-height: 50vh !important;
+    height: var(--dialog-height);
+}

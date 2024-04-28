@@ -1,0 +1,41 @@
+{
+    "created_time": "2024-04-28T11:29:24Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "created_time": "2024-04-28T11:29:24Z",
+            "id": "67",
+            "modified_time": "2024-04-28T11:29:24Z",
+            "name": "main.js",
+            "signature": "38828218659604",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2024-04-28T11:29:24Z",
+            "id": "68",
+            "modified_time": "2024-04-28T11:29:24Z",
+            "name": "manifest.json",
+            "signature": "38407311864596",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2024-04-28T11:29:24Z",
+            "id": "69",
+            "modified_time": "2024-04-28T11:29:24Z",
+            "name": "styles.css",
+            "signature": "82739964293908",
+            "tags": [
+            ]
+        }
+    ],
+    "folders": [
+    ],
+    "id": "66",
+    "modified_time": "2024-04-28T11:29:24Z",
+    "signature": "129305999717140",
+    "version": 3
+}

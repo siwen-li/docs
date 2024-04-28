@@ -1,0 +1,74 @@
+{
+    "created_time": "2024-04-28T11:29:23Z",
+    "files": [
+    ],
+    "folders": [
+        {
+            "name": "calendar"
+        },
+        {
+            "name": "cmdr"
+        },
+        {
+            "name": "code-emitter"
+        },
+        {
+            "name": "code-files"
+        },
+        {
+            "name": "codeblock-tabs"
+        },
+        {
+            "name": "dataview"
+        },
+        {
+            "name": "editing-toolbar"
+        },
+        {
+            "name": "Enhanced editing"
+        },
+        {
+            "name": "execute-code"
+        },
+        {
+            "name": "floating-toc"
+        },
+        {
+            "name": "mysnippets-plugin"
+        },
+        {
+            "name": "obsidian-admonition"
+        },
+        {
+            "name": "obsidian-auto-link-title"
+        },
+        {
+            "name": "obsidian-code-tab-1.0"
+        },
+        {
+            "name": "obsidian-dictionary-plugin"
+        },
+        {
+            "name": "obsidian-excalidraw-plugin"
+        },
+        {
+            "name": "obsidian-file-cleaner"
+        },
+        {
+            "name": "obsidian-fullscreen-plugin"
+        },
+        {
+            "name": "obsidian-git"
+        },
+        {
+            "name": "obsidian-hover-editor"
+        },
+        {
+            "name": "obsidian-icon-folder"
+        }
+    ],
+    "id": "11",
+    "modified_time": "2024-04-28T11:29:23Z",
+    "signature": "24504502727443",
+    "version": 3
+}
