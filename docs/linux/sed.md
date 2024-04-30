@@ -15,10 +15,10 @@ tags:
         ```
 
 ## sed 执行过程
-![image](https://xlog.app/_next/image?url=https%3A%2F%2Fipfs.4everland.xyz%2Fipfs%2Fbafkreicsc4ek6ey5do2fme3g2m77mmeyex64rspnyyk42xbtxu356t5qgu&w=1080&q=75)
+![image](./assets/sed.png)
 
 
- 
+
 ## sed 命令选项
 
 | 选项 | 作用                                                         |
@@ -73,10 +73,10 @@ tags:
             sed '表达式1; 表达式2'
             sed -e '表达式1' -e '表达式2'`
             ```
-
+    
     === "子字符串匹配（反向引用）"
         - 匹配给定模式中的一部分，配合`()`分组使用，`\n`就表示匹配第几个分组的结果
-
+    
     === "已匹配字符串"
         - 使用 `&` 来表示匹配到的每一个内容，也可以使用子字符串匹配来实现
 

@@ -16,7 +16,7 @@ tags:
 
 ## awk 执行过程 
 
-![image](https://xlog.app/_next/image?url=https%3A%2F%2Fipfs.4everland.xyz%2Fipfs%2Fbafkreifgy2r5gbucf7f7xsnw3w7gt6bdmrcqtmmclchuiv5ikqckvi2s6m&w=384&q=75)
+![image](./assets/awk.png)
 
 
 ## awk 程序结构
@@ -93,7 +93,7 @@ tags:
     操作可以由一个或多个命令、函数、表达式组成，之间由换行符或分号隔开
 
     awk 正则范围：
-
+    
     - `/start/,/end/`
     - `NR==1,NR==5` 从第 1 行开始第 5 行结束
 
