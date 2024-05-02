@@ -136,15 +136,15 @@ tags:
 [root@localhost ~]# sed -i -e '5d' -e 's/*/#/g' test.txt
 
 # 新建文件file.sed里面书写sed脚本 将test.txt文件中第一行到'?'结尾的行打印出来
-[root@localhost ~]# echo "/1,/^A/p" > file.sed 
+[root@localhost ~]# echo "1,/?$/p" > file.sed 
 [root@localhost ~]# sed -n -f file.sed test.txt 
 
 ## 后向引用
 -- 先保护后使用 
 
-# 将 "hello world" 改成 "[hello] [world]" 
+# 将 "hello world" 改成 "[hello] world" 
 [root@localhost ~]# echo "hello world" | sed -r 's/(\w+)/[\1]/g'
-[root@localhost ~]# echo "hello world" | sed -r 's/\w+/[&]/g'
+[root@localhost ~]# echo "hello world" | sed -r 's/hello/[&]/g'
 
 # 将每一行第一次连续出现3次的字符串替换成 ‘嗯哼~’ 
 [root@localhost ~]# sed -r -i 's/([a-z])\1\1/嗯哼~/' test.txt

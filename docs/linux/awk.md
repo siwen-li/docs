@@ -177,7 +177,7 @@ awk 'BEGIN{var=value}'
 [root@localhost ~]# awk 'NR==3{print $2}' emp.txt
 
 # 统计每个部门的人数 
-[root@localhost ~]# awk '{print $NF}' emp.txt | uniq -c
+[root@localhost ~]# awk '{print $NF}' emp.txt | sort -nk4 | uniq -c
 
 # 将输出字段分隔符修改为':' 并把输出结果写入emp.txt.bak文件 
 [root@localhost ~]# awk -v OFS=":" '{print $1,$2,$3,$4}' emp.txt > emp.bak.txt
