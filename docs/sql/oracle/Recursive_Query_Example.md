@@ -112,34 +112,44 @@ connect by id = prior parrent_id;  -- (1)
 
 找出“贵州省”下面的所有市级及以上行政区
 ```sql
-select *
-from t_area 
+select id,parrent_id,name
+from t_area
 where name = '贵州省'
 union all
-select b.* 
-from t_area a,t_area b 
-where a.name = '贵州省'
-and a.id = b.parrent_id; -- (1)
+select b.id,b.parrent_id,b.name
+from
+  (select *
+  from t_area
+  where name = '贵州省') a
+join t_area b
+on a.id = b.parrent_id; -- (1)
 ```
 
 1.  ![Alt text](./assets/img4-1711627596234-13.png)
 
 找出“贵州省”下面的所有区级及以上行政区
 ```sql
-select *
-from t_area 
+select id,parrent_id,name
+from t_area
 where name = '贵州省'
-union all 
-select b.*  
-from 
+union all
+select b.id,b.parrent_id,b.name
+from
   (select *
-  from t_area 
-  where name = '贵州省'
-  union all
-  select b.* 
-  from t_area a,t_area b 
-  where a.name = '贵州省'
-  and a.id = b.parrent_id) a
+  from t_area
+  where name = '贵州省') a
+join t_area b
+on a.id = b.parrent_id
+union all
+select b.id,b.parrent_id,b.name
+from
+  (select b.id,b.parrent_id,b.name
+  from
+    (select *
+    from t_area
+    where name = '贵州省') a
+    join t_area b
+    on a.id = b.parrent_id) a
 join t_area b
 on a.id = b.parrent_id; -- (1)
 ```

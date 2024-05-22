@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "Recursive_Query_Example",
+      "path": "docs/sql/oracle/Recursive_Query_Example.md"
+    },
+    {
+      "basename": "Hierarchical_Query_Pseudocolumns",
+      "path": "docs/sql/oracle/Hierarchical_Query_Pseudocolumns.md"
+    },
+    {
+      "basename": "Hierarchical_Query_Operators",
+      "path": "docs/sql/oracle/Hierarchical_Query_Operators.md"
+    },
+    {
+      "basename": "Hierarchical_Queries",
+      "path": "docs/sql/oracle/Hierarchical_Queries.md"
+    },
+    {
       "basename": "sed",
       "path": "docs/linux/sed.md"
     },
@@ -183,18 +199,6 @@
     {
       "basename": "shell脚本",
       "path": "notes/linux/shell脚本.md"
-    },
-    {
-      "basename": "SYS_CONNECT_BY_PATH",
-      "path": "notes/sql/oracle/SYS_CONNECT_BY_PATH.md"
-    },
-    {
-      "basename": "未命名 5",
-      "path": "notes/python/numpy/未命名 5.md"
-    },
-    {
-      "basename": "05_numpy矩阵和向量",
-      "path": "notes/python/numpy/05_numpy矩阵和向量.md"
     }
   ],
   "omittedPaths": [],

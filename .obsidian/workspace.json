@@ -13,9 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/linux/sed.md",
-                "mode": "preview",
+                "file": "docs/sql/oracle/Recursive_Query_Example.md",
+                "mode": "source",
                 "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "75e75c9276d38aad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1fc964ede5f6928e",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-view",
+              "state": {
+                "url": "http://127.0.0.1:8000/sql/oracle/Recursive_Query_Example/#1"
               }
             }
           }
@@ -118,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/linux/sed.md",
+                "file": "docs/sql/oracle/Recursive_Query_Example.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/linux/sed.md",
+                "file": "docs/sql/oracle/Recursive_Query_Example.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -159,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/linux/sed.md"
+                "file": "docs/sql/oracle/Recursive_Query_Example.md"
               }
             }
           },
@@ -262,6 +278,10 @@
   },
   "active": "a7bcec4358fb60ca",
   "lastOpenFiles": [
+    "docs/sql/oracle/Recursive_Query_Example.md",
+    "docs/sql/oracle/Hierarchical_Query_Pseudocolumns.md",
+    "docs/sql/oracle/Hierarchical_Query_Operators.md",
+    "docs/sql/oracle/Hierarchical_Queries.md",
     "docs/linux/sed.md",
     "docs/linux/awk.md",
     "Excalidraw/Drawing 2024-04-28 20.53.47.excalidraw.md",
@@ -287,10 +307,6 @@
     "未命名.md",
     "notes/linux/normal 移动的快捷方式：.md",
     "Template/侧边栏/天气预报.md",
-    "notes/python/python02/14_异常.md",
-    "notes/python/python0/01.08-循环结构.md",
-    "notes/linux/Python基础.md",
-    "notes/python/numpy/01_认识numpy.md",
     "notes/sql/oracle",
     "notes/python/python/03_其他",
     "notes/python/python/02_python面向对象",
