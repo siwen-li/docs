@@ -1,0 +1,2316 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>shell - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shell" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="https://example.com" title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              shell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/siwen-li/docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    siwen-li/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  标签
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sql/oracle/Oracle_regular_expression/" class="md-tabs__link">
+          
+  
+    
+  
+  SQL
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Linunx_regular_expression/" class="md-tabs__link">
+          
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://example.com" title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    MyDocs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/siwen-li/docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    siwen-li/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    标签
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            标签
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Oracle
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Oracle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/Oracle_regular_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oracle 正则表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/REGEXP_COUNT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REGEXP_COUNT 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/REGEXP_INSTR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REGEXP_INSTR 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/REGEXP_REPLACE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REGEXP_REPLACE 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/REGEXP_SUBSTR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REGEXP_SUBSTR 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/REGEXP_LIKE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REGEXP_LIKE 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/Hierarchical_Queries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oracle 层次查询
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/Hierarchical_Query_Operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oracle 层次查询运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/Hierarchical_Query_Pseudocolumns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oracle 层次查询伪列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/SYS_CONNECT_BY_PATH/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SYS_CONNECT_BY_PATH 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/oracle/Recursive_Query_Example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    递归查询示例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linunx_regular_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux 正则表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    grep 命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sed 命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../awk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    awk 命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../awk_programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    awk 编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      shell 概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一个 shell 脚本
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 什么是变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量的定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的定义规则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的定义方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      本地变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统变量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.字符串操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.字符串操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串数组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      算数运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      关系运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件测试运算符
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      流程控制语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流程控制语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if 结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      if...else 结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifelifelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      if...elif...else 结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      if 嵌套结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      for 循环语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while 循环语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#until" class="md-nav__link">
+    <span class="md-ellipsis">
+      until 循环语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breakcontinue" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳出循环 break，continue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      嵌套循环
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    <span class="md-ellipsis">
+      case 语句和函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="case 语句和函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      case 语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="shell">shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h1>
+<h2 id="shell_1">shell 概述<a class="headerlink" href="#shell_1" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Shell是命令解释器(command interpreter)，是Unix操作系统的用户接口，程序从用户接口得到输入信息，shell将用户程序及其输入翻译成操作系统内核（kernel）能够识别的指令，并且操作系统内核执行完将返回的输出通过shell再呈现给用户，下图所示用户、shell和操作系统的关系：
+</span></code></pre></div>
+<p><a class="glightbox" href="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155227929-714173321.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20210411153245838" src="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155227929-714173321.png" /></a></p>
+<p>一个系统可以存在多个 shell，可以通过 <code>cat /etc/shells</code> 命令查看系统中安装的 shell。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat /etc/shells</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/bin/sh
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/bin/bash
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>/usr/bin/sh
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/usr/bin/bash
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/bin/tcsh
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>/bin/csh
+</span></code></pre></div>
+<p>操作系统内核（kernel）与 shell 是独立的套件，而且都可被替换；不同的操作系统使用不同的 shell； 同一个 kernel 之上可以使用不同的 shell。 也可以查看当前 shell 环境是哪种：</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># echo $SHELL</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/bin/bash
+</span></code></pre></div>
+<p>shell 脚本：可执行的 Linux 命令或语句不在命令行状态下执行，而是通过一个文件执行时，我们将这个文件称为 shell 脚本（可执行命令的组合）。在此脚本中，我们可以使用一些编程语法来进行一些任务操作。  如：变量、类型、分支结构、循环结构、数组、函数等语法。 在 shell 脚本里，必须指定一种 shell 命令解释器，它通过解释器解释运行。shell 脚本文件的后缀为.sh</p>
+<h2 id="shell_2">第一个 shell 脚本<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>编写脚本打印 "hello shell"</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello shell&quot;</span>
+</span></code></pre></div>
+<ul>
+<li>脚本执行</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># sh hello.sh</span>
+</span></code></pre></div>
+<ul>
+<li>说明</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="m">1</span>.脚本的第一行要写解析器的位置<span class="w">  </span>声明用什么解释器来解释这个shell脚本
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="m">2</span>.#!/bin/bash
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="m">3</span>.要执行这个脚本,有两种方式
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>第一种:解析器的位置<span class="w"> </span>脚本文件名
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>如:bash<span class="w"> </span>文件名.sh
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>第二种运行方法:
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>修改文件的权限,添加执行权限
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>./文件名.sh
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># 练习:写个shell脚本,显示你自己的名字</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># 练习:新建两个文件夹,aa和bb,bb里有1.txt,aa里有2.txt,写个shell脚本,把aa,bb里的文件互换</span>
+</span></code></pre></div>
+<ul>
+<li>注释</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>注释的文字不是代码的一部分,解析器看到你是注释文字,那么就不会进行解析
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="m">1</span>.单行注释用#,#后面的所有文字都是注释,shell首行的#不是注释
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="m">2</span>.多行注释:
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>:&lt;&lt;!
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">#echo 1111  #xxxx</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="m">2222</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="m">3333</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>!
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>编写一个脚本<span class="w"> </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>提示用户输入<span class="w"> </span>名字<span class="w"> </span>性别<span class="w"> </span>家庭地址
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>然后打印名字<span class="w"> </span>性别<span class="w"> </span>和<span class="w"> </span>家庭地址<span class="o">(</span>每行打印一个<span class="o">)</span>
+</span></code></pre></div>
+<h2 id="_1">变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 什么是变量<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>变量是用来临时保存数据的，该数据是可以变化的数据。</li>
+<li>如果某个内容需要多次使用，并且在代码中 <strong>重复出现</strong>，那么可以用变量代表该内容。这样在修改内容的时候，仅仅需要修改变量的值。</li>
+</ul>
+<h3 id="_2">变量的定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="_3">变量的定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>变量名 = 变量值</strong></li>
+</ul>
+<p>变量名：用来临时保存数据的</p>
+<p>变量值：就是临时的可变化的数据</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">变量名</span><span class="o">=</span>变量值
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># A=hello</span>
+</span></code></pre></div>
+<h4 id="_4">变量的定义规则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="m">1</span>.变量名区分大小写
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="m">2</span>.变量名不能有特殊符号
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="m">3</span>.变量名不能以数字开头
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="m">4</span>.不能使用bash中的关键字
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="m">5</span>.变量名尽量做到见名知意
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="m">6</span>.等号两边不能有任何空格
+</span></code></pre></div>
+<h4 id="_5">变量的定义方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="m">1</span>.直接赋值给一个变量
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># A=hello</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="m">2</span>.命令执行结果赋值给变量
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># B=`date +%F`</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="m">3</span>.交互式定义变量<span class="w"> </span><span class="nb">read</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>让用户自己给变量赋值
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>语法:<span class="w"> </span><span class="nb">read</span><span class="w"> </span><span class="o">[</span>选项<span class="o">]</span><span class="w"> </span>变量名
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># 只读变量</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>使用readonly来修饰变量,使变量成为只读变量,只读变量是不能修改的
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># readonly B=shell</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="c1"># 删除变量</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>使用unset可以删除一个变量
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># unset A</span>
+</span></code></pre></div>
+<ul>
+<li><strong><code>read</code> 常见选项：</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>定义提示用户的信息</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>定义字符数（限制变量值的长度）</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>不显示（不显示用户输入的内容）</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>定义超时时间，默认单位为秒（限制用户输入变量值的超时时间）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">变量的使用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>使用一个定义过的变量, 只要在变量名前面加上 <code>$</code>, 就可以获取变量里的值</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># A=hello</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">[</span>root@centos<span class="w"> </span>~<span class="o">]</span><span class="c1"># echo $A</span>
+</span></code></pre></div>
+<h3 id="_7">变量的分类<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">本地变量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>当前用户自定义的变量，当前进程中有效，其他进程及当前进程的子进程无效</li>
+</ul>
+<h4 id="_9">环境变量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>当前进程有效，并且能够被子进程调用</li>
+<li><code>env</code> 查看当前用户的环境变量</li>
+<li>可以使用 ”<code>export</code>  变量名 = 变量值“ 设置一个环境变量</li>
+</ul>
+<h4 id="_10">全局变量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>全局所有的用户和程序都能调用</p>
+</li>
+<li>
+<p>解读相关配置文件</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~/.bashrc</td>
+<td>当前用户的 bash 信息，用户登录时读取</td>
+<td>局部。定义别名、umask、函数等</td>
+</tr>
+<tr>
+<td>~/.bash_profile</td>
+<td>当前用户的环境变量信息，用户登录时读取</td>
+<td>局部。</td>
+</tr>
+<tr>
+<td>~/.bash_logout</td>
+<td>当前用户退出当前 shell 时最后读取</td>
+<td>局部。定义用户退出时执行的程序等</td>
+</tr>
+<tr>
+<td>~/.bash_history</td>
+<td>当前用户的历史命令</td>
+<td>局部。<code>history -w</code> 保存历史记录 <code>history -c</code> 清空历史记录</td>
+</tr>
+<tr>
+<td>/etc/bashrc</td>
+<td>全局的 bash 信息</td>
+<td>全局。所有用户都生效</td>
+</tr>
+<tr>
+<td>/etc/profile</td>
+<td>全局环境变量信息</td>
+<td>全局。系统和所有用户都生效</td>
+</tr>
+</tbody>
+</table>
+<p>说明：以上文件修改后，都需要重新 <code>source</code> 让其生效或者退出重新登录。</p>
+<h4 id="_11">系统变量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>shell 本身已经固定好了它的名字和作用.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>内置变量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$?</td>
+<td>上一条命令执行后返回的状态；状态值为 0 表示执行正常，非 0 表示执行异常或错误</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>当前执行的程序或脚本名</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>脚本后面接的参数的个数</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>脚本后面所有参数，参数当成一个整体输出，每一个变量参数之间以空格隔开</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>脚本后面所有参数，参数是独立的，也是全部输出</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1~\)</span> 9</td>
+<td>脚本后面的位置参数，$1 表示第 1 个位置参数，依次类推</td>
+</tr>
+<tr>
+<td><span class="arithmatex" n="n">\({10}~\)</span></td>
+<td>扩展位置参数, 第 10 个位置变量必须用{}大括号括起来(2 位数字以上扩起来)</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前所在进程的进程号，如<code>echo $$</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4.字符串操作<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="_12">字符串概述<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>字符串:用引号包含的若干个字符组成的整体叫字符串
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>如:<span class="s2">&quot;12345&quot;</span>,<span class="s2">&quot;约吗?&quot;</span>,<span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;2&quot;</span>,<span class="s2">&quot;hello world&quot;</span>
+</span></code></pre></div>
+<ul>
+<li><code>bash</code> 中的引号</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>双引号<span class="s2">&quot;&quot;</span>：弱引用，会把引号的内容当成整体来看待，允许通过$符号引用其他变量值
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>单引号<span class="s1">&#39;&#39;</span>：强引用，会把引号的内容当成整体来看待，禁止引用其他变量值，shell中特殊符号都被视为普通字符
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>反撇号<span class="sb">``</span>：命令替换，反撇号和<span class="k">$()</span>一样，引号或括号里的命令会优先执行，如果存在嵌套，反撇号不能用
+</span></code></pre></div>
+<h3 id="_13">字符串操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="m">1</span>.字符串的拼接
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>把若干个字符串组合在一起的操作,叫字符串的拼接
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;zhangsan&quot;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">p1</span><span class="o">=</span><span class="s2">&quot;hello </span><span class="nv">$name</span><span class="s2">&quot;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$p1</span><span class="w"> </span><span class="c1">#打印出来显示hello zhangsan</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nv">p2</span><span class="o">=</span><span class="s2">&quot;hello </span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">abc&quot;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="nv">p3</span><span class="o">=</span><span class="nv">$p1$p2</span><span class="w">     </span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$p3</span><span class="w">    </span><span class="c1">#hello zhangsanhello zhangsan</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="nv">p4</span><span class="o">=</span><span class="nv">$p1</span><span class="w"> </span><span class="nv">$p2</span><span class="w">  </span><span class="c1">#错误</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="nv">p4</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$p1</span><span class="s2"> </span><span class="nv">$p2</span><span class="s2">&quot;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$p4</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="m">2</span>.获取字符串的长度<span class="o">(</span>统计一下字符串中有多少个字符<span class="o">)</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="nv">x</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span><span class="w"> </span>--该字符串的长度为5
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>格式:<span class="si">${#</span><span class="nv">变量名</span><span class="si">}</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>获取x变量中存储的字符串的长度
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">x</span><span class="si">}</span><span class="w"> </span><span class="c1">#5</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>注意:字符串中有符号或空格也算一个字符
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>如:
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="nv">y</span><span class="o">=</span><span class="s2">&quot;hello world!&quot;</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">y</span><span class="si">}</span><span class="w">  </span><span class="c1">#12</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="m">3</span>.截取字符串
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>格式:<span class="si">${</span><span class="nv">变量名</span><span class="p">:</span><span class="nv">开始截取的字符下标</span><span class="p">:</span><span class="nv">截取的长度</span><span class="si">}</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>如:
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="nv">x</span><span class="o">=</span><span class="s2">&quot;zhangsan&quot;</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">x</span><span class="p">:</span><span class="nv">2</span><span class="p">:</span><span class="nv">3</span><span class="si">}</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>注意:下标是从0开始数
+</span></code></pre></div>
+<h3 id="_14">字符串数组<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="m">1</span>.数组:相同数据类型的数据集合
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="m">2</span>.字符串数组:若干个字符串组成的集合叫字符串数组
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="m">3</span>.shell中数组是没有大小限定<span class="w"> </span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="m">4</span>.定义数组的格式:
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nv">数组名</span><span class="o">=(</span>值1<span class="w"> </span>值2<span class="w"> </span>值3...<span class="o">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="m">5</span>.数组里元素的位置是从0开始数,通常也叫数组的下标,可以针对数组里的位置单独放数据
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>如:
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nv">myarr</span><span class="o">=(</span><span class="s2">&quot;aa&quot;</span><span class="w"> </span><span class="s2">&quot;bb&quot;</span><span class="w"> </span><span class="s2">&quot;cc&quot;</span><span class="o">)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>myarr<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;kk&quot;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="m">6</span>.读取数组里的元素
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="m">1</span>.格式:<span class="si">${</span><span class="nv">数组名</span><span class="p">[下标]</span><span class="si">}</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span>如要要取出上面数组中的bb元素,<span class="si">${</span><span class="nv">myarr</span><span class="p">[1]</span><span class="si">}</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="m">2</span>.把数组中的所有元素一次性取出,并打印
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">数组名</span><span class="p">[@]</span><span class="si">}</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span>如要取出上面数组中所有的元素并打印
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">myarr</span><span class="p">[@]</span><span class="si">}</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="m">3</span>.获取数组的长度<span class="o">(</span>获取数组里有多少个元素<span class="o">)</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="si">${#</span><span class="nv">myarr</span><span class="p">[@]</span><span class="si">}</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="m">4</span>.获取数组中单个元素的长度
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="si">${#</span><span class="nv">myarr</span><span class="p">[0]</span><span class="si">}</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>练习:写在脚本里：定义一个数组,把你所在省份的周边省放入到这个数组,然后在一个一个打印出来,每打印一个,还要在下面一行打印出该元素长度,最后一次性取出所有的元素,再打印数组的长度
+</span></code></pre></div>
+<h2 id="_15">运算符<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">算数运算符<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>算数运算：默认情况下，shell 就只能支持简单的 <strong>整数运算</strong></li>
+<li>
+<p>运算内容：加(+)、减(-)、乘(*)、除(/)、求余数（%）</p>
+</li>
+<li>
+<p><code>shell</code> 进行数值运算的符号</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>举例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(( ))</td>
+<td>echo $((1+1))</td>
+<td>可以进行复杂运算， * 号不需转义</td>
+</tr>
+<tr>
+<td>$[ ]</td>
+<td>echo $ [10-5]</td>
+<td>可以进行复杂运算， * 号不需转义</td>
+</tr>
+<tr>
+<td>expr</td>
+<td>expr 10 / 5</td>
+<td>expr 程序中，数值与运算符之间需要空格隔开，乘(*)运算符需要用转义符(  )转义，expr 不能做幂运算</td>
+</tr>
+<tr>
+<td>let</td>
+<td>n = 1; let n+= 1 等价于 let n = n+1</td>
+<td>let n <em>= 2 等价于 let n = n* 2，不能使用 let n*</em>= 2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">关系运算符<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>判断参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>相等</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>不等</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>小于等于</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_18">逻辑运算符<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>判断符号</th>
+<th>含义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a 和 &amp;&amp;</td>
+<td>逻辑与</td>
+<td>[ 1 -eq 1 -a 1 -ne 0 ] <br /> [ 1 -eq 1 ] &amp;&amp; [ 1 -ne 0 ]</td>
+</tr>
+<tr>
+<td>-o 和 ||</td>
+<td>逻辑或</td>
+<td>[ 1 -eq 1 -o 1 -ne 1 ] <br /> [ 1 -eq 1 ]  || [1 -ne 1]</td>
+</tr>
+</tbody>
+</table>
+<p><code>&amp;&amp;</code> 前面的表达式为真，才会执行后面的代码</p>
+<p><code>||</code> 前面的表达式为假，才会执行后面的代码</p>
+<p><code>;</code> 只用于分割命令或表达式</p>
+<h3 id="_19">字符串运算符<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>判断参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-z</td>
+<td>判断是否为空字符串，字符串长度为 0 则成立</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>判断是否为非空字符串，字符串长度不为 0 则成立</td>
+</tr>
+<tr>
+<td>string1 = string2</td>
+<td>判断字符串是否相等</td>
+</tr>
+<tr>
+<td>string1 != string2</td>
+<td>判断字符串是否相不等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">文件测试运算符<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>test 命令的作用: 用于检测某个条件是否成立, 它可以对数值, 字符, 和文件三个方面进行检测</p>
+</li>
+<li>
+<p>判断文件类型</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>判断参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e</td>
+<td>判断文件是否存在（任何类型文件）</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>判断文件是否存在并且是一个普通文件</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>判断文件是否存在并且是一个目录</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>判断文件是否存在并且是一个软连接文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>判断文件是否存在并且是一个非空文件（有内容）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>判断文件权限</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>判断参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>当前用户对其是否可读</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>当前用户对其是否可写</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>当前用户对其是否可执行</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>判断文件新旧</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>判断参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file1 -nt file2</td>
+<td>比较 file1 是否比 file2 新</td>
+</tr>
+<tr>
+<td>file1 -ot file2</td>
+<td>比较 file1 是否比 file2 旧</td>
+</tr>
+<tr>
+<td>file1 -ef file2</td>
+<td>比较是否为同一个文件，或者用于判断硬连接，是否指向同一个 inode</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_21">流程控制语句<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h3 id="if"><code>if</code> 结构<a class="headerlink" href="#if" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155228477-1097092026.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="流程判断 1" src="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155228477-1097092026.png" /></a></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">        </span>命令
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">fi</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">then</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span>命令
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="k">fi</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>条件<span class="p">;</span><span class="k">then</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span>命令
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="k">fi</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span>命令
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="k">fi</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">command</span>
+</span></code></pre></div>
+<h3 id="ifelse"><code>if...else</code> 结构<a class="headerlink" href="#ifelse" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155228931-826836806.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="流程判断 2" src="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155228931-826836806.png" /></a></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">        </span>命令1
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">else</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span>命令2
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">fi</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>命令1<span class="w"> </span><span class="o">||</span><span class="w"> </span>命令2
+</span></code></pre></div>
+<h3 id="ifelifelse"><code>if...elif...else</code> 结构<a class="headerlink" href="#ifelifelse" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155229315-651851470.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="流程判断 3" src="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155229315-651851470.png" /></a></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件1<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">        </span>命令1<span class="w">      </span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件2<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span>命令2<span class="w">      </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span>命令3
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">fi</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>如果条件1满足，执行命令1后结束；如果条件1不满足，再看条件2，如果条件2满足执行命令2后结束；如果条件1和条件2都不满足执行命令3结束.
+</span></code></pre></div>
+<h3 id="if_1"><code>if</code> 嵌套结构<a class="headerlink" href="#if_1" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155229740-545386054.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="流程判断 4" src="https://img2023.cnblogs.com/blog/2920709/202303/2920709-20230313155229740-545386054.png" /></a></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件1<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">        </span>命令1<span class="w">        </span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件2<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">            </span>命令2
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="k">fi</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w"> </span><span class="k">else</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件3<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">            </span>命令3
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>条件4<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">            </span>命令4
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">            </span>命令5
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">        </span><span class="k">fi</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="k">fi</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>如果条件1满足，执行命令1；如果条件2也满足执行命令2，如果不满足就只执行命令1结束；
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>如果条件1不满足，不看条件2；直接看条件3，如果条件3满足执行命令3；如果不满足则看条件4，如果条件4满足执行命令4；否则执行命令5
+</span></code></pre></div>
+<h2 id="_22">循环语句<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h3 id="for"><code>for</code> 循环语句<a class="headerlink" href="#for" title="Permanent link">&para;</a></h3>
+<ul>
+<li>基本语法结构</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">for</span><span class="w"> </span>变量<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span>列表<span class="o">}</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">do</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span>命令<span class="w"> </span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">done</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1"># 或者</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="k">for</span><span class="w"> </span>变量<span class="w"> </span><span class="k">in</span><span class="w"> </span>值1<span class="w"> </span>值2<span class="w"> </span>值3
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="k">do</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span>命令
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="k">done</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="c1"># 或者</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>expr1<span class="p">;</span>expr2<span class="p">;</span>expr3<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="k">do</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">    </span>命令
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="k">done</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>循环打印1-5
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="m">1</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="m">2</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="m">3</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="m">4</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="m">5</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="nv">i</span><span class="o">=</span>i+1<span class="w">    </span><span class="nv">i</span><span class="o">=</span>i-1<span class="w">    </span><span class="nv">i</span><span class="o">=</span>i*1
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="nv">i</span><span class="o">+=</span><span class="m">1</span><span class="w">     </span>i-<span class="o">=</span><span class="m">1</span><span class="w">     </span>i*<span class="o">=</span><span class="m">1</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>i++
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">5</span><span class="p">;</span>i++<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="k">do</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="k">done</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">100</span><span class="p">;</span>i++<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="k">do</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a><span class="w">    </span><span class="nv">sum</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$sum</span>+<span class="nv">$i</span><span class="o">]</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="k">done</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$sum</span>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="c1"># expr1：定义变量并赋初值</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="c1"># expr2：决定是否进行循环（条件）</span>
+</span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="c1"># expr3：决定循环变量如何改变（决定循环什么时候退出）</span>
+</span></code></pre></div>
+<h3 id="while"><code>while</code> 循环语句<a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>条件成立就进入循环，条件不成立则退出循环</p>
+</li>
+<li>
+<p>基本语法</p>
+</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">while</span><span class="w"> </span>表达式
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">do</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span>命令
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">done</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">100</span><span class="p">;</span>i++<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="k">do</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span>命令
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="k">done</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="nv">i</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="k">while</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i&lt;<span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="o">))</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="k">do</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span>命令
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="nv">i</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$i</span>+1<span class="o">]</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="k">done</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>用while循环求1-100的累加和
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="k">while</span><span class="w"> </span>:
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="k">while</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>永真表达式<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="k">while</span><span class="w">  </span><span class="o">[</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span>或者<span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">))</span>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="k">do</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">    </span>命令
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="k">done</span>
+</span></code></pre></div>
+<h3 id="until"><code>until</code> 循环语句<a class="headerlink" href="#until" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>条件为假就进入循环，条件为真就退出循环</p>
+</li>
+<li>
+<p>语法结构</p>
+</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">until</span><span class="w"> </span>表达式
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">do</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span>命令
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">done</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>直到满足表达式之前我都去进行循环
+</span></code></pre></div>
+<h3 id="breakcontinue">跳出循环 <code>break</code>，<code>continue</code><a class="headerlink" href="#breakcontinue" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>break</code>：打断；马上停止执行本次循环，执行循环体后面的代码</li>
+<li><code>continue</code>：继续；表示循环体内下面的代码不执行，重新开始下一次循环</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">a</span><span class="o">=</span><span class="m">10</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">while</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">))</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">do</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;一直停不下来 </span><span class="nv">$a</span><span class="s2">&quot;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nb">let</span><span class="w"> </span><span class="s2">&quot;a++&quot;</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="k">then</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">        </span><span class="k">break</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="k">done</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="nv">n</span><span class="o">=</span><span class="m">0</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="k">while</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">$n</span>&lt;<span class="m">100</span><span class="w"> </span><span class="o">))</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="k">do</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">    </span><span class="nb">let</span><span class="w"> </span><span class="s2">&quot;n++&quot;</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">66</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">88</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">    </span><span class="k">then</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">        </span><span class="k">continue</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$n</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="k">done</span>
+</span></code></pre></div>
+<h3 id="_23">嵌套循环<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>一个循环体内又包含另一个 <strong>完整</strong> 的循环结构，称为循环的嵌套。</li>
+<li>每次外部循环都会触发内部循环，直至内部循环完成，才接着执行下一次的外部循环。</li>
+<li>for 循环、while 循环和 until 循环可以 <strong>相互</strong> 嵌套。</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="m">1</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="m">12</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="m">123</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="m">1234</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="m">12345</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>外部循环：打印换行，并且换5行<span class="w"> </span>，循环5次
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>内部循环：打印12345数字
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">5</span><span class="p">;</span>i++<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="k">do</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">j</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>j&lt;<span class="o">=</span><span class="nv">$i</span><span class="p">;</span>j++<span class="w"> </span><span class="o">))</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$j</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="nb">echo</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="k">done</span>
+</span></code></pre></div>
+<h2 id="case"><code>case</code> 语句和函数<a class="headerlink" href="#case" title="Permanent link">&para;</a></h2>
+<h3 id="case_1"><code>case</code> 语句<a class="headerlink" href="#case_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>case</code> 语句为多重匹配语句，匹配成功则执行相应命令</li>
+<li>语法结构</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>说明：pattern表示需要匹配的模式
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">case</span><span class="w"> </span>var<span class="w"> </span><span class="k">in</span><span class="w">             </span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span>值1<span class="o">)</span><span class="w">                 </span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span>command1<span class="w">            </span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="p">;;</span><span class="w">                  </span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span>值2<span class="o">)</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span>command2
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">    </span>值3<span class="o">)</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span>command3
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">    </span>*<span class="o">)</span><span class="w">                  </span><span class="c1"># default，不满足以上模式，默认执行*)下面的语句</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">    </span>command4
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="k">esac</span><span class="w">                    </span><span class="c1"># esac表示case语句结束</span>
+</span></code></pre></div>
+<h3 id="_24">函数<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>shell 中允许将 <strong>一组命令集合</strong> 或 <strong>语句</strong> 形成一段 <strong>可用代码</strong>，这些代码块称为 shell 函数</li>
+<li>给这段代码起个名字称为函数名，后续可以直接调用该段代码的功能</li>
+<li>函数声明</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>函数名<span class="o">()</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="o">{</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span>函数体（一堆命令的集合，来实现某个功能）<span class="w">   </span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="o">}</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>或者
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">function</span><span class="w"> </span>函数名<span class="o">()</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="o">{</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">   </span>函数体（一堆命令的集合，来实现某个功能）
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="o">}</span>
+</span></code></pre></div>
+<ul>
+<li>函数调用</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>函数名<span class="w"> </span><span class="o">[</span>参数<span class="o">]</span>
+</span></code></pre></div>
+<ul>
+<li>函数的传参和返回值</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="m">1</span>.函数传参
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>a.在Shell中，调用函数时可以向其传递参数。在函数体内部，通过<span class="w"> </span><span class="nv">$n</span><span class="w"> </span>的形式来获取参数的值，
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>例如，<span class="nv">$1</span>表示第一个参数，<span class="nv">$2</span>表示第二个参数...
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>但是，当n&gt;<span class="o">=</span>10时，需要使用<span class="si">${</span><span class="nv">n</span><span class="si">}</span>来获取参数值
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>如:
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>add<span class="o">(){</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">    </span><span class="nv">c</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>+<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;c=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">10</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="o">}</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>add<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>b.传递参数到函数内,在调用函数时,在函数名的旁边写参数
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>add<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">400</span><span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="m">700</span><span class="w"> </span><span class="m">800</span><span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">1000</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>练习:
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="m">1</span>.写一个减法功能的函数,参数是从函数外部传递
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>sub<span class="o">(){</span>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="w">    </span><span class="nv">a</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-<span class="w"> </span><span class="nv">$2</span><span class="sb">`</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;结果:</span><span class="nv">$a</span><span class="s2">&quot;</span>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="o">}</span>
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>sub<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">10</span>
+</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>
+</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="m">2</span>.写一个有加减乘除功能的函数,运算的数据和运算符都从外部传递到函数内
+</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="nv">n</span><span class="o">=</span><span class="m">0</span>
+</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>count<span class="o">(){</span>
+</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-28-31"><a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="w">        </span><span class="s2">&quot;+&quot;</span><span class="o">)</span>
+</span><span id="__span-28-32"><a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="w">            </span><span class="nv">n</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>+<span class="w"> </span><span class="nv">$2</span><span class="sb">`</span>
+</span><span id="__span-28-33"><a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-28-34"><a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a><span class="w">        </span><span class="s2">&quot;-&quot;</span><span class="o">)</span>
+</span><span id="__span-28-35"><a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a><span class="w">            </span><span class="nv">n</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-<span class="w"> </span><span class="nv">$2</span><span class="sb">`</span>
+</span><span id="__span-28-36"><a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-28-37"><a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a><span class="w">        </span><span class="s2">&quot;*&quot;</span><span class="o">)</span>
+</span><span id="__span-28-38"><a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a><span class="w">            </span><span class="nv">n</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="se">\*</span><span class="w"> </span><span class="nv">$2</span><span class="sb">`</span>
+</span><span id="__span-28-39"><a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-28-40"><a id="__codelineno-28-40" name="__codelineno-28-40" href="#__codelineno-28-40"></a><span class="w">        </span><span class="s2">&quot;/&quot;</span><span class="o">)</span>
+</span><span id="__span-28-41"><a id="__codelineno-28-41" name="__codelineno-28-41" href="#__codelineno-28-41"></a><span class="w">            </span><span class="nv">n</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>/<span class="w"> </span><span class="nv">$2</span><span class="sb">`</span>
+</span><span id="__span-28-42"><a id="__codelineno-28-42" name="__codelineno-28-42" href="#__codelineno-28-42"></a><span class="w">            </span><span class="p">;;</span>
+</span><span id="__span-28-43"><a id="__codelineno-28-43" name="__codelineno-28-43" href="#__codelineno-28-43"></a><span class="w">    </span><span class="k">esac</span>
+</span><span id="__span-28-44"><a id="__codelineno-28-44" name="__codelineno-28-44" href="#__codelineno-28-44"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;结果:</span><span class="nv">$n</span><span class="s2">&quot;</span>
+</span><span id="__span-28-45"><a id="__codelineno-28-45" name="__codelineno-28-45" href="#__codelineno-28-45"></a>
+</span><span id="__span-28-46"><a id="__codelineno-28-46" name="__codelineno-28-46" href="#__codelineno-28-46"></a><span class="o">}</span>
+</span><span id="__span-28-47"><a id="__codelineno-28-47" name="__codelineno-28-47" href="#__codelineno-28-47"></a>
+</span><span id="__span-28-48"><a id="__codelineno-28-48" name="__codelineno-28-48" href="#__codelineno-28-48"></a>count<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+</span><span id="__span-28-49"><a id="__codelineno-28-49" name="__codelineno-28-49" href="#__codelineno-28-49"></a>
+</span><span id="__span-28-50"><a id="__codelineno-28-50" name="__codelineno-28-50" href="#__codelineno-28-50"></a>
+</span><span id="__span-28-51"><a id="__codelineno-28-51" name="__codelineno-28-51" href="#__codelineno-28-51"></a><span class="m">2</span>.函数的返回值
+</span><span id="__span-28-52"><a id="__codelineno-28-52" name="__codelineno-28-52" href="#__codelineno-28-52"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-28-53"><a id="__codelineno-28-53" name="__codelineno-28-53" href="#__codelineno-28-53"></a>add<span class="o">(){</span>
+</span><span id="__span-28-54"><a id="__codelineno-28-54" name="__codelineno-28-54" href="#__codelineno-28-54"></a><span class="w">    </span><span class="nv">c</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>+<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-28-55"><a id="__codelineno-28-55" name="__codelineno-28-55" href="#__codelineno-28-55"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;c=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+</span><span id="__span-28-56"><a id="__codelineno-28-56" name="__codelineno-28-56" href="#__codelineno-28-56"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">$c</span>
+</span><span id="__span-28-57"><a id="__codelineno-28-57" name="__codelineno-28-57" href="#__codelineno-28-57"></a><span class="o">}</span>
+</span><span id="__span-28-58"><a id="__codelineno-28-58" name="__codelineno-28-58" href="#__codelineno-28-58"></a>add<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-28-59"><a id="__codelineno-28-59" name="__codelineno-28-59" href="#__codelineno-28-59"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+</span><span id="__span-28-60"><a id="__codelineno-28-60" name="__codelineno-28-60" href="#__codelineno-28-60"></a>
+</span><span id="__span-28-61"><a id="__codelineno-28-61" name="__codelineno-28-61" href="#__codelineno-28-61"></a>注意:
+</span><span id="__span-28-62"><a id="__codelineno-28-62" name="__codelineno-28-62" href="#__codelineno-28-62"></a><span class="m">1</span>，shell中通过return返回是有限制的,只能返回整型，最大返回值是255
+</span><span id="__span-28-63"><a id="__codelineno-28-63" name="__codelineno-28-63" href="#__codelineno-28-63"></a><span class="m">2</span>，有多个函数返回时,在最后使用<span class="nv">$?</span>获取返回值时返回的是最后一个函数的返回值
+</span><span id="__span-28-64"><a id="__codelineno-28-64" name="__codelineno-28-64" href="#__codelineno-28-64"></a><span class="c1">#!/bin/bash</span>
+</span><span id="__span-28-65"><a id="__codelineno-28-65" name="__codelineno-28-65" href="#__codelineno-28-65"></a>add<span class="o">(){</span>
+</span><span id="__span-28-66"><a id="__codelineno-28-66" name="__codelineno-28-66" href="#__codelineno-28-66"></a><span class="w">    </span><span class="nv">c</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>+<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-28-67"><a id="__codelineno-28-67" name="__codelineno-28-67" href="#__codelineno-28-67"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;c=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+</span><span id="__span-28-68"><a id="__codelineno-28-68" name="__codelineno-28-68" href="#__codelineno-28-68"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">$c</span>
+</span><span id="__span-28-69"><a id="__codelineno-28-69" name="__codelineno-28-69" href="#__codelineno-28-69"></a><span class="o">}</span>
+</span><span id="__span-28-70"><a id="__codelineno-28-70" name="__codelineno-28-70" href="#__codelineno-28-70"></a>add<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-28-71"><a id="__codelineno-28-71" name="__codelineno-28-71" href="#__codelineno-28-71"></a>
+</span><span id="__span-28-72"><a id="__codelineno-28-72" name="__codelineno-28-72" href="#__codelineno-28-72"></a>add2<span class="o">(){</span>
+</span><span id="__span-28-73"><a id="__codelineno-28-73" name="__codelineno-28-73" href="#__codelineno-28-73"></a><span class="w">    </span><span class="nv">c</span><span class="o">=</span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>+<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-28-74"><a id="__codelineno-28-74" name="__codelineno-28-74" href="#__codelineno-28-74"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;c=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+</span><span id="__span-28-75"><a id="__codelineno-28-75" name="__codelineno-28-75" href="#__codelineno-28-75"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">$c</span>
+</span><span id="__span-28-76"><a id="__codelineno-28-76" name="__codelineno-28-76" href="#__codelineno-28-76"></a><span class="o">}</span>
+</span><span id="__span-28-77"><a id="__codelineno-28-77" name="__codelineno-28-77" href="#__codelineno-28-77"></a>add2<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">200</span>
+</span><span id="__span-28-78"><a id="__codelineno-28-78" name="__codelineno-28-78" href="#__codelineno-28-78"></a>
+</span><span id="__span-28-79"><a id="__codelineno-28-79" name="__codelineno-28-79" href="#__codelineno-28-79"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 - 2024 siwen
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/siwen-li" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.indexes", "navigation.tabs", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "search.share", "navigation.top", "navigation.footer", "content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
