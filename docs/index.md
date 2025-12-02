@@ -7,7 +7,7 @@ hide:
 comments: false
 ---
 
-<center><font class="custom-font ml3">最好的 Zensical 中文教程</font></center>
+<!-- <center><font class="custom-font ml3">最好的 Zensical 中文教程</font></center>
 
 <style>
 .custom-font {
@@ -19,7 +19,7 @@ comments: false
         font-size: 25px;
     }
 }
-</style>
+</style> -->
 
 
 ---

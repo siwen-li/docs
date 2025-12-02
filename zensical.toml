@@ -4,7 +4,7 @@
 
 [project]
 # ===== 基本信息 [Info] =====
-site_name = "MyDocs"           # 网站名称
+site_name = "My-Docs"           # 网站名称
 site_url = "https://docs.swsw.eu.org"  # 网站URL（请修改为你的域名）
 site_description = "杂七杂八的笔记"  # 网站描述
 site_author = "siwen"                           # 网站作者
@@ -14,14 +14,14 @@ site_dir = "site"                                # 生成的网站目录
 use_directory_urls = true                        # 使用目录形式的URL
 
 # ===== 仓库配置 =====
-repo_url = "https://github.com/siwen-li/docs/"  # 右上角点击跳转的链接
-repo_name = "MyDocs"                            # 右上角的名字
+repo_url = "https://github.com/siwen-li/My-Docs"  # 右上角点击跳转的链接
+repo_name = "My-Docs"                            # 右上角的名字
 edit_uri = "edit/main/docs"                              # 编辑按钮跳转的链接
 
 # ===== 额外的 JavaScript 文件 =====
 extra_javascript = [
-    # "javascripts/glm-config.js",                              # 智谱清言翻译配置
-    # "javascripts/glm-translate.js",                           # 智谱清言翻译系统
+    "javascripts/glm-config.js",                              # 智谱清言翻译配置
+    "javascripts/glm-translate.js",                           # 智谱清言翻译系统
     "javascripts/extra.js",                                   # 额外功能脚本
     "https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js",  # 表格排序
     "javascripts/tablesort.js",
@@ -44,14 +44,13 @@ nav = [
     { "主页" = "index.md" },
     { "快速开始" = [
         "getting-started/哈哈.md",
-        "getting-started/quick-start.md",
-        "getting-started/migration.md",
     ] },
     { "教程" = [
         "教程/markdown 基本语法.md",
         "教程/Python Markdown 扩展.md",
         "教程/front matter.md",
-        "教程/快速开始.md"
+        "教程/快速开始.md",
+        "教程/test"
     ]},
 
     {"oracle" = [
@@ -87,8 +86,8 @@ nav = [
 [project.theme]
 variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
 custom_dir = "overrides"     # 自定义主题目录（相对于配置文件）
-logo = "https://zensical.org/assets/zensical.svg"  # 网站 Logo
-favicon = "https://zensical.org/assets/zensical.svg"          # 网站图标
+logo = "images/cat.svg"  # 网站 Logo
+favicon = "images/cat.ico"          # 网站图标
 language = "zh"                   # 网站语言：中文
 
 
@@ -125,7 +124,7 @@ features = [
     "content.code.select",        # 代码选择功能
     "content.code.annotate",      # 代码注释功能
     "content.tabs.link",           # tabbed tabs链接
-    # "content.action.edit",
+    "content.action.edit",
     # "content.action.view"
 ]
 
@@ -190,17 +189,17 @@ lang = "en"
 # 显示在页脚的社交媒体图标
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/Wcowin/Zensical-Chinese-Tutorial"
+link = "https://github.com/siwen-li/My-Docs"
 name = "GitHub"
 
 [[project.extra.social]]
-icon = "fontawesome/brands/telegram"
-link = "https://t.me/Wcowin"
-name = "Telegram"
+icon = "fontawesome/brands/qq"
+link = "http://wpa.qq.com/msgrd?v=3&uin=1477693009&site=qq&menu=yes"
+name = "QQ"
 
 [[project.extra.social]]
 icon = "fontawesome/regular/envelope"
-link = "mailto:wcowin@qq.com"
+link = "mailto:lisiwen523@gmail.com"
 name = "Email"
 
 # ===== Google Analytics =====
@@ -271,27 +270,27 @@ mysql = "sql"
 
 
 # ===== RSS 订阅插件 =====
-[project.plugins.rss]
-enabled = true                                                                    # 启用 RSS 订阅
-match_path = "blog/.*"                                                            # 包含的路径：博客文章
-use_git = false                                                                   # 禁用Git日志读取，避免警告
-categories = ["tags", "categories"]                                               # 分类标签
-comments_path = "#__comments"                                                     # 评论区锚点
-image = "https://zensical.org/assets/zensical.svg"                                # RSS 订阅图片
-feed_ttl = 1440                                                                   # 订阅更新时间（分钟），24小时
-length = 20                                                                       # 最新文章数量
-pretty_print = true                                                               # 格式化输出
-feed_description = "Zensical 中文教程 - 最详细、最便捷、最前沿的 Zensical 中文教程"  # RSS 描述
-feed_title = "Zensical-Wcowin RSS Feed"                                           # RSS 标题
+# [project.plugins.rss]
+# enabled = true                                                                    # 启用 RSS 订阅
+# match_path = "blog/.*"                                                            # 包含的路径：博客文章
+# use_git = false                                                                   # 禁用Git日志读取，避免警告
+# categories = ["tags", "categories"]                                               # 分类标签
+# comments_path = "#__comments"                                                     # 评论区锚点
+# image = "https://zensical.org/assets/zensical.svg"                                # RSS 订阅图片
+# feed_ttl = 1440                                                                   # 订阅更新时间（分钟），24小时
+# length = 20                                                                       # 最新文章数量
+# pretty_print = true                                                               # 格式化输出
+# feed_description = "Zensical 中文教程 - 最详细、最便捷、最前沿的 Zensical 中文教程"  # RSS 描述
+# feed_title = "Zensical-Wcowin RSS Feed"                                           # RSS 标题
 
-[project.plugins.rss.date_from_meta]
-as_creation = "date"           # 创建日期来源
-as_update = "update"           # 更新日期来源
-datetime_format = "%Y-%m-%d"   # 日期格式
+# [project.plugins.rss.date_from_meta]
+# as_creation = "date"           # 创建日期来源
+# as_update = "update"           # 更新日期来源
+# datetime_format = "%Y-%m-%d"   # 日期格式
 
-[project.plugins.rss.url_parameters]
-utm_source = "rss"             # UTM 来源标记
-utm_medium = "feed"            # UTM 媒介标记
+# [project.plugins.rss.url_parameters]
+# utm_source = "rss"             # UTM 来源标记
+# utm_medium = "feed"            # UTM 媒介标记
 
 # ==========================================
 # Markdown 扩展配置 [Markdown Extensions]
