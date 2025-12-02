@@ -1,11 +1,4 @@
----
-title: Zensical 中文教程
-hide:
-#   - navigation
-#   - toc 
-  - footer
-comments: false
----
+
 
 <!-- <center><font class="custom-font ml3">最好的 Zensical 中文教程</font></center>
 
@@ -20,7 +13,7 @@ comments: false
     }
 }
 </style> -->
-
+# 杂七杂八的笔记
 
 ---
 
