@@ -83,9 +83,9 @@ nav = [
 # ==========================================
 [project.theme]
 variant = "modern"                # Zensical 特有：使用 modern 主题变体（或 "classic"）
-custom_dir = "overrides"     # 自定义主题目录（相对于配置文件）
-logo = "images/cat.svg"  # 网站 Logo
-favicon = "images/cat.ico"          # 网站图标
+custom_dir = "overrides"          # 自定义主题目录（相对于配置文件）
+logo = "images/cat.svg"           # 网站 Logo
+favicon = "images/cat.ico"        # 网站图标
 language = "zh"                   # 网站语言：中文
 
 
@@ -96,16 +96,16 @@ features = [
     "navigation.prune",           # 只渲染可见导航项
     "navigation.tracking",        # 滚动时URL锚点自动更新
     "navigation.tabs",            # 一级导航显示为顶部Tab
-    # "navigation.tabs.sticky",     # 固定顶部 Tab
+    # "navigation.tabs.sticky",   # 固定顶部 Tab
     "navigation.sections",        # 侧边栏分组
     "navigation.top",             # 返回顶部按钮
     "navigation.path",            # 顶部导航目录
     "navigation.footer",          # 上一页/下一页导航
     "navigation.expand",          # 默认展开导航
     "navigation.indexes",         # 章节索引页
-    "navigation.instant",      # 即时导航
+    "navigation.instant",           # 即时导航
     "navigation.instant.prefetch",  # 预加载
-    # "header.autohide",     # 页眉自动隐藏
+    # "header.autohide",            # 页眉自动隐藏
 
     
     # 搜索相关
