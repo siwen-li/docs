@@ -1,17 +1,17 @@
+/* MathJax 配置 */
 window.MathJax = {
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
     processEscapes: true,
-    processEnvironments: true,
+    processEnvironments: true
   },
   options: {
     ignoreHtmlClass: ".*|",
-    processHtmlClass: "arithmatex",
-    enableMenu: false,
-  },
+    processHtmlClass: "arithmatex"
+  }
 };
 
 document$.subscribe(() => {
-  MathJax.typesetPromise();
+  MathJax.typesetPromise()
 });
