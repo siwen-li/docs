@@ -55,7 +55,3 @@
     - [自托管部署](blog/deployment/self-hosted.md)
 
 </div>
-
----
-本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="061b4dea-9b7b-4ffa-9071-74cde70f3dfb"></script>

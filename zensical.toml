@@ -203,9 +203,9 @@ name = "Email"
 # ===== Google Analytics =====
 # 网站分析工具，用于统计访问数据
 # 如果你需要使用 Google Analytics，取消注释并替换为你自己的 ID
-[project.extra.analytics]
-provider = "google"
-property = "G-DZBPT3BLNF"  # 请替换为你的 Google Analytics 追踪 ID
+# [project.extra.analytics]
+# provider = "google"
+# property = "G-xxx"  # 请替换为你的 Google Analytics 追踪 ID
 # 
 # # 用户反馈配置
 # [project.extra.analytics.feedback]
