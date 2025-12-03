@@ -51,6 +51,15 @@ nav = [
         "教程/test"
     ]},
 
+    { "行测" = [
+        "行测/资料分析.md",
+        "行测/言语理解.md",
+    ]},
+
+    { "申论" = [
+        "申论/基础知识.md"
+    ]},
+
     {"oracle" = [
         { "Oracle 正则表达式" = "oracle/Oracle_regular_expression.md" },
         { "REGEXP_COUNT 函数" = "oracle/REGEXP_COUNT.md" },
