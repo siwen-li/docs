@@ -1,3 +1,9 @@
+---
+icon: lucide/clipboard-pen-line
+---
+
+# PyMdown 扩展语法
+
 !!! Failure ""
     Python Markdown 扩展官方文档: [pymdown-extensions](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
 
@@ -508,7 +514,61 @@
 
     [Send :fontawesome-solid-paper-plane:](#){ .md-button }
 
+ 
 
 
 
-[111](quick-start/#_2){ data-preview } 
+## 其他
+
+=== "ad 加注释"
+
+    ```
+    !!! note annotate "Phasellus posuere in sem ut cursus (1)"
+
+    Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
+    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+    purus auctor massa, nec semper lorem quam in massa.
+
+    1.  :man_raising_hand: I'm an annotation!
+    2.  :woman_raising_hand: I'm an annotation as well!
+
+    ```
+
+
+    !!! note annotate "Phasellus posuere in sem ut cursus (1)"
+
+        Lorem ipsum dolor sit amet, (2) consectetur adipiscing elit. Nulla et
+        euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+        purus auctor massa, nec semper lorem quam in massa.
+
+    1.  :man_raising_hand: I'm an annotation!
+    2.  :woman_raising_hand: I'm an annotation as well!
+ 
+=== "data-preview"
+
+    ```
+    [预览](Python%20Markdown%20扩展语法/#_1){ data-preview }
+    ```
+
+    [预览](Python%20Markdown%20扩展语法/#_1){ data-preview }
+
+=== "其他格式"
+
+    !!! quote inline ""
+
+        - 高亮：==This was marked==
+        - 下划线：^^This was inserted^^
+        - 删除线：~~This was deleted~~
+
+        - 下标：H~2~O
+        - 上标：A^T^A
+
+        - 键盘：++ctrl+alt+del++
+    
+
+    - ==This was marked==
+    - ^^This was inserted^^
+    - ~~This was deleted~~
+    - H~2~O   
+    - A^T^A
+    - ++ctrl+alt+del++

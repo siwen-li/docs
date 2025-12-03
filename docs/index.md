@@ -19,7 +19,7 @@
 
 <div class="grid cards" markdown>
 
--   :simple-zenn:{ .lg .middle } __Zensical 快速开始（必看）__
+-   :fontawesome-solid-bars:{ .lg .middle } __Zensical 快速开始（必看）__
 
     ---
     
@@ -55,3 +55,29 @@
     - [自托管部署](blog/deployment/self-hosted.md)
 
 </div>
+
+
+<!-- <style>
+body::before {
+  --size: 35px;
+  --line: color-mix(in hsl, canvasText, transparent 80%);
+  content: '';
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+          mask: linear-gradient(-20deg, transparent 50%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
+}
+</style> -->

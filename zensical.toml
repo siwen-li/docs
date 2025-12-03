@@ -43,12 +43,11 @@ extra_css = [
 # ===== 导航配置 [Navigation] =====
 nav = [
     { "主页" = "index.md" },
-    { "教程" = [
-        "教程/markdown 基本语法.md",
-        "教程/Python Markdown 扩展.md",
-        "教程/front matter.md",
-        "教程/快速开始.md",
-        "教程/test"
+    { "开始" = [
+        "开始/zensical 使用.md",
+        "开始/markdown 基础语法.md",
+        "开始/PyMdown 扩展语法.md",
+        "开始/front matter.md",
     ]},
 
     { "行测" = [
@@ -58,6 +57,10 @@ nav = [
 
     { "申论" = [
         "申论/基础知识.md"
+    ]},
+
+    { "成语" = [
+        "cy.md"
     ]},
 
     {"oracle" = [
@@ -263,6 +266,7 @@ linux = "fontawesome/brands/linux"
 py = "fontawesome/brands/python"
 regexp = "fontawesome/solid/laptop-code"
 sql = "fontawesome/solid/database"
+note = "fontawesome/solid/file-pen"
 
 [project.extra.tags]
 HTML5 = "html"
@@ -274,6 +278,7 @@ regexp = "regexp"
 sql = "sql"
 oracle = "sql"
 mysql = "sql"
+note = "note"
 
 
 # ===== RSS 订阅插件 =====

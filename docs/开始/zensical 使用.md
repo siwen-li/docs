@@ -1,4 +1,8 @@
-# 快速开始
+---
+icon: lucide/play
+---
+
+# zensical 使用
 
 ## 安装和创建项目
 

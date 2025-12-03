@@ -1,3 +1,7 @@
+---
+icon: lucide/pen-line
+---
+
 # Markdown 基础语法
 
 ## 1. 标题 (Headings)
