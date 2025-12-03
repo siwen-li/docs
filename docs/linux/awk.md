@@ -64,6 +64,7 @@ tags:
 | -f scriptfile | 从脚本文件中读取awk命令                                      |
 
 ???+ tip "awk 使用方式" 
+```tabs
     === "命令行使用"
         - 直接在命令行里执行 `awk` 命令
         ```shell 
@@ -77,7 +78,8 @@ tags:
         ```
     === "shell 脚本使用"
         - 将awk命令写到shell脚本里，执行shell脚本
-
+```
+```
 
 
 
