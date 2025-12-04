@@ -16,6 +16,14 @@ status: new/deprecated
 
 [图标](https://zensical.org/docs/authoring/icons-emojis/#included-icon-sets)
 
+<iframe
+  width="100%"
+  height="400"
+  src="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search">
+</iframe>
+
+
+
 
 !!! quote inline ""
 

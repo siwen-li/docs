@@ -64,6 +64,12 @@
 
 
 <!-- <style>
+    .md-typeset .grid {
+        grid-template-columns: none;
+    }
+</style> -->
+
+<!-- <style>
 body::before {
   --size: 35px;
   --line: color-mix(in hsl, canvasText, transparent 80%);
@@ -87,3 +93,5 @@ body::before {
   z-index: -1;
 }
 </style> -->
+
+
