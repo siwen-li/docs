@@ -36,14 +36,14 @@
     - [主题配置指南](tutorials/theme-customization.md)
     - [配置详解](tutorials/configuration.md)
 
--   :material-puzzle:{ .lg .middle } __插件系统__
+-   :material-puzzle:{ .lg .middle } __在线网站__
 
     ---
     
-    - [博客插件详解](blog/plugins/blog.md)
-    - [搜索插件配置](blog/plugins/search.md)
-    - [标签插件使用](blog/plugins/tags.md)
-    - [RSS 插件配置](blog/plugins/rss.md)
+    - [成语=实词](https://cy.swsw.eu.org/)
+    - [申论素材](https://sl.swsw.eu.org/)
+    - [linux 命令查询](https://cmd.swsw.eu.org/)
+    - [RSS 插件配置](https://mm.siwen.eu.org/)
 
 -   :material-rocket:{ .lg .middle } __部署指南__
 
