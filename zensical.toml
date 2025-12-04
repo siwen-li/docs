@@ -52,16 +52,16 @@ nav = [
 
     { "行测" = [
         "行测/资料分析.md",
-        "行测/言语理解.md",
+        "行测/片段阅读.md",
+        "行测/逻辑填空.md",
+        "行测/词语积累.md",
+        "行测/cy.md"
     ]},
 
     { "申论" = [
-        "申论/基础知识.md"
+        "申论/范文.md"
     ]},
 
-    { "成语" = [
-        "cy.md"
-    ]},
 
     {"oracle" = [
         { "Oracle 正则表达式" = "oracle/Oracle_regular_expression.md" },
@@ -256,6 +256,7 @@ pagination_url_format = "page/{page}"         # 分页URL格式
 
 # ===== 标签插件 =====
 [project.plugins.tags]
+
 
 [project.theme.icon.tag]
 default = "lucide/hash"

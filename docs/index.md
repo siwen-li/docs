@@ -19,40 +19,46 @@
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-bars:{ .lg .middle } __Zensical 快速开始（必看）__
+-   :fontawesome-solid-bars:{ .lg .middle } __开始__
 
     ---
     
-    - [5 分钟快速开始](getting-started/quick-start.md)
-    - [Zensical 博客系统完全指南](tutorials/blog-tutorial.md)
-    - [zensical.toml 配置详解](tutorials/configuration.md)
-    - [从 MkDocs 迁移到 Zensical](getting-started/migration.md)
-    - [常见问题解答](faq.md)
+    - [Zensical 使用](开始/zensical 使用.md)
+    - [markdown 基础语法](开始/markdown 基础语法.md)
+    - [PyMdown 扩展语法](开始/PyMdown 扩展语法.md)
+    - [Zensical 官网](https://zensical.org/)
 
--   :material-palette:{ .lg .middle } __主题定制__
 
-    ---
-    
-    - [主题配置指南](tutorials/theme-customization.md)
-    - [配置详解](tutorials/configuration.md)
-
--   :material-puzzle:{ .lg .middle } __在线网站__
+-   :material-book-open-variant-outline:{ .lg .middle } __阅读__
 
     ---
     
-    - [成语=实词](https://cy.swsw.eu.org/)
+    - [学习强国-要闻](https://www.xuexi.cn/98d5ae483720f701144e4dabf99a4a34/5957f69bffab66811b99940516ec8784.html)
+    - [学习强国-时评](https://www.xuexi.cn/d05cad69216e688d304bb91ef3aac4c6/9a3668c13f6e303932b5e0e100fc248b.html)
+    - [学习强国-金句](https://www.xuexi.cn/xxqg.html?id=e8fef3d718f24640a49a0d09632c4d93)
+    - [学习强国-用典](https://www.xuexi.cn/4b93eb98090f5f4d0ed95e54d6d9dfd4/ba635b20ba5f94e503123161c188170c.html)
+
+
+
+-   :material-web-check:{ .lg .middle } __网站__
+
+    ---
+    
+    - [成语-实词](https://cy.swsw.eu.org/)
     - [申论素材](https://sl.swsw.eu.org/)
-    - [linux 命令查询](https://cmd.swsw.eu.org/)
-    - [RSS 插件配置](https://mm.siwen.eu.org/)
+    - [人民日报](https://paper.people.com.cn/)
+    - [半月谈](http://www.banyuetan.org/)
 
--   :material-rocket:{ .lg .middle } __部署指南__
+  
+
+-   :material-hammer-wrench:{ .lg .middle } __工具__
 
     ---
     
-    - [GitHub Pages 部署（推荐）](blog/deployment/github-pages.md)
-    - [Netlify 部署](blog/deployment/netlify.md)
-    - [GitLab Pages 部署](blog/deployment/gitlab-pages.md)
-    - [自托管部署](blog/deployment/self-hosted.md)
+    - [Excalidraw](https://excalidraw.com/)
+    - [思维导图](https://mm.siwen.eu.org/)
+    - [linux 命令查询](https://cmd.swsw.eu.org/)
+
 
 </div>
 

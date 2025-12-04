@@ -1,4 +1,8 @@
-# 成语
+---
+icon: lucide/scan-search
+---
+
+# 成语-实词
 
 
 

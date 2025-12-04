@@ -49,6 +49,8 @@ status: new/deprecated
 
     fontawesome/solid/bars
 
+    material/web-plus
+
 
 
 !!! note "图片标题"
