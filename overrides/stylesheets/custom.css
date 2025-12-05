@@ -1,0 +1,235 @@
+/* docs/css/custom.css */
+
+/* 打字机效果样式 */
+#typewriter-container {
+    text-align: center;
+    padding: 25px 20px;
+    margin: 25px 0;
+    
+    /* 白天模式 */
+    border: 1px solid var(--typewriter-border);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--typewriter-shadow);
+    
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    user-select: none; /* 防止文字被选中 */
+    position: relative;
+}
+
+#typewriter-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--typewriter-shadow-hover);
+}
+
+#typewriter-container:active {
+    transform: translateY(0);
+}
+
+#typewriter {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--typewriter-text);
+    min-height: 2em;
+    line-height: 1.6;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#typewriter-text {
+    display: inline-block;
+    font-family: 'Georgia', 'Times New Roman', 'SimSun', serif;
+    letter-spacing: 0.02em;
+    min-height: 1.6em;
+}
+
+#typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.3em;
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: blink 1.5s infinite;
+    position: relative;
+    top: -1px;
+    background-color: var(--typewriter-cursor);
+}
+
+/* 提示文字样式 */
+#typewriter-container::after {
+    content: '点击获取答案（或按 A 键）';
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 0.7em;
+    color: var(--typewriter-text);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+#typewriter-container:hover::after {
+    opacity: 0.9;
+}
+
+/* 动画 */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #typewriter-container {
+        padding: 20px 15px;
+        margin: 20px 0;
+    }
+    
+    #typewriter {
+        font-size: 1.3em;
+    }
+    
+    #typewriter-container::after {
+        content: '点击获取答案';
+        font-size: 0.6em;
+        bottom: 3px;
+        right: 5px;
+    }
+}
+
+/* 夜间模式适配 */
+[data-md-color-scheme="slate"] #typewriter-container,
+.theme-dark #typewriter-container,
+.dark-mode #typewriter-container,
+[data-theme="dark"] #typewriter-container {
+    /* 深色模式变量 */
+    --typewriter-bg-start: #2c3e50;
+    --typewriter-bg-end: #34495e;
+    --typewriter-border: #4a5568;
+    --typewriter-text: #e2e8f0;
+    --typewriter-cursor: #63b3ed;
+    --typewriter-shadow: rgba(0, 0, 0, 0.3);
+    --typewriter-shadow-hover: rgba(0, 0, 0, 0.4);
+    --typewriter-border-color: rgba(99, 179, 237, 0.3);
+}
+
+/* 白天模式变量（默认值） */
+#typewriter-container {
+    --typewriter-bg-start: #f8f9fa;
+    --typewriter-bg-end: #e9ecef;
+    --typewriter-border: #dee2e6;
+    --typewriter-text: #2c3e50;
+    --typewriter-cursor: #3498db;
+    --typewriter-shadow: rgba(0, 0, 0, 0.1);
+    --typewriter-shadow-hover: rgba(0, 0, 0, 0.15);
+    --typewriter-border-color: rgba(52, 152, 219, 0.3);
+}
+
+/* 适配 Material for MkDocs 的夜间模式 */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #1a202c;
+}
+
+/* 如果您的主题使用不同的选择器，请添加以下适配 */
+html[data-theme="dark"] #typewriter-container,
+body.dark #typewriter-container,
+.dark #typewriter-container {
+    --typewriter-bg-start: #2c3e50;
+    --typewriter-bg-end: #34495e;
+    --typewriter-border: #4a5568;
+    --typewriter-text: #e2e8f0;
+    --typewriter-cursor: #63b3ed;
+    --typewriter-shadow: rgba(0, 0, 0, 0.3);
+    --typewriter-shadow-hover: rgba(0, 0, 0, 0.4);
+    --typewriter-border-color: rgba(99, 179, 237, 0.3);
+}
+
+
+
+
+
+/* ==========================天气========================== */
+
+#viki-weather-container {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: block;
+    max-width: 100%;
+    color: inherit; /* 跟随主题文字颜色 */
+}
+
+#viki-weather-container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.w-split {
+    margin: 0 8px;
+    opacity: 0.5;
+}
+
+/* 交互项：虚线 + 鼠标手势 */
+.w-interactive {
+    cursor: pointer;
+    border-bottom: 1px dashed currentColor;
+}
+
+/* 浮窗样式：黑色背景白字 */
+#weather-float-tip {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.85); 
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 1.2em;
+    max-width: 240px;
+    pointer-events: none;
+}
+/* ==========================天气========================== */
+
+
+
+
+/* ==========================================================================
+   一言 (Hitokoto) 组件 - 极简文字版
+   ========================================================================== */
+#hitokoto-container {
+    /* 布局与字体大小 */
+    margin-top: 8px;      /* 离天气组件稍微近一点 */
+    margin-bottom: 16px; 
+    padding: 4px 0;       /* 不需要太多的内边距 */
+    font-size: 0.95em;    /* 【关键】与天气组件字体大小一致 */
+    line-height: 1.5;
+    
+    /* 颜色适配 */
+    color: var(--md-default-fg-color--light); /* 使用稍微淡一点的灰色，不抢天气风头 */
+    
+    /* 交互 */
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+    
+    /* 确保没有外框 */
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* 悬停时变色，提示可点击 */
+#hitokoto-container:hover {
+    color: var(--md-primary-fg-color); /* 悬停变为主题色 */
+}
+
+/* 小图标样式 */
+.hitokoto-icon {
+    margin-right: 6px;
+    opacity: 0.7;
+}
+
+
+/* ==========================================================================
+   ========================================================================== */

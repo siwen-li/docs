@@ -36,6 +36,7 @@ extra_javascript = [
 extra_css = [
     "stylesheets/extra.css",          # 额外样式
     "stylesheets/ziti.css",            # 字体样式
+    "stylesheets/custom.css",           # 自定义样式
     "https://unpkg.com/katex@0/dist/katex.min.css"
 ]
 
@@ -48,6 +49,12 @@ nav = [
         "开始/markdown 基础语法.md",
         "开始/PyMdown 扩展语法.md",
         "开始/front matter.md",
+    ]},
+
+    { "新闻" = [
+        "新闻/新闻.md",
+        "新闻/热搜.md",
+        
     ]},
 
     { "行测" = [

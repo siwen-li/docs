@@ -15,6 +15,23 @@
 </style> -->
 # 杂七杂八的笔记
 
+
+<!-- 天气 -->
+<div id="viki-weather-container"></div>
+
+
+
+
+<!-- 打字机效果容器(答案之书) -->
+<div id="typewriter-container">
+  <div id="typewriter">
+    <span id="typewriter-text"></span>
+    <span id="typewriter-cursor"></span>
+  </div>
+</div>
+
+
+
 ---
 
 <div class="grid cards" markdown>
@@ -62,6 +79,15 @@
 
 </div>
 
+
+<!-- 一言组件 (极简版) -->
+<div id="hitokoto-container" title="点击刷新">
+    <span class="hitokoto-icon">💬</span>
+    <span id="hitokoto-text">正在加载...</span>
+</div>
+
+
+<script src="javascripts/custom.js"></script>
 
 <!-- <style>
     .md-typeset .grid {
