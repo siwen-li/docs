@@ -40,7 +40,7 @@
 
 #typewriter-text {
     display: inline-block;
-    font-family: 'Georgia', 'Times New Roman', 'SimSun', serif;
+    /* font-family: 'Georgia', 'Times New Roman', 'SimSun', serif; */
     letter-spacing: 0.02em;
     min-height: 1.6em;
 }

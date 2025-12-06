@@ -81,7 +81,7 @@
 
 
 <!-- 一言组件 (极简版) -->
-<div id="hitokoto-container" title="点击刷新">
+<div id="hitokoto-container">
     <span class="hitokoto-icon">💬</span>
     <span id="hitokoto-text">正在加载...</span>
 </div>
