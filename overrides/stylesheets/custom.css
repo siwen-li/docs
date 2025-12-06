@@ -18,8 +18,8 @@
 }
 
 #typewriter-container:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--typewriter-shadow-hover);
+    /* transform: translateY(-2px); */
+    box-shadow: 0 4px 8px var(--typewriter-shadow-hover);
 }
 
 #typewriter-container:active {
@@ -106,7 +106,7 @@
     /* 深色模式变量 */
     --typewriter-bg-start: #2c3e50;
     --typewriter-bg-end: #34495e;
-    --typewriter-border: #4a5568;
+    --typewriter-border: var(--md-default-fg-color--lightest);
     --typewriter-text: #e2e8f0;
     --typewriter-cursor: #63b3ed;
     --typewriter-shadow: rgba(0, 0, 0, 0.3);
@@ -118,7 +118,7 @@
 #typewriter-container {
     --typewriter-bg-start: #f8f9fa;
     --typewriter-bg-end: #e9ecef;
-    --typewriter-border: #dee2e6;
+    --typewriter-border: var(--md-default-fg-color--lightest);
     --typewriter-text: #2c3e50;
     --typewriter-cursor: #3498db;
     --typewriter-shadow: rgba(0, 0, 0, 0.1);
@@ -126,24 +126,6 @@
     --typewriter-border-color: rgba(52, 152, 219, 0.3);
 }
 
-/* 适配 Material for MkDocs 的夜间模式 */
-[data-md-color-scheme="slate"] {
-    --md-default-bg-color: #1a202c;
-}
-
-/* 如果您的主题使用不同的选择器，请添加以下适配 */
-html[data-theme="dark"] #typewriter-container,
-body.dark #typewriter-container,
-.dark #typewriter-container {
-    --typewriter-bg-start: #2c3e50;
-    --typewriter-bg-end: #34495e;
-    --typewriter-border: #4a5568;
-    --typewriter-text: #e2e8f0;
-    --typewriter-cursor: #63b3ed;
-    --typewriter-shadow: rgba(0, 0, 0, 0.3);
-    --typewriter-shadow-hover: rgba(0, 0, 0, 0.4);
-    --typewriter-border-color: rgba(99, 179, 237, 0.3);
-}
 
 
 

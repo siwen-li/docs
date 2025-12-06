@@ -93,58 +93,146 @@ function initWeather() {
     const container = document.getElementById('viki-weather-container');
     if (!container) return;
 
-    // 防止重复请求，如果已经有内容就不再请求(可选)
-    // 但为了实时性，这里每次都刷新
-    
-    const apiUrl = 'https://60s.viki.moe/v2/weather?query=%E5%AE%89%E9%A1%BA%E5%B8%82'; 
-    container.innerHTML = '<span>⌛ 正在加载天气...</span>';
+    // 1. 获取本地存储的城市，如果没有则默认为 '安顺市'
+    const STORAGE_KEY = 'viki_custom_city';
+    let currentCity = localStorage.getItem(STORAGE_KEY) || '安顺市';
 
+    // 创建悬浮提示框 (如果不存在)
     let floatTip = document.getElementById('weather-float-tip');
     if (!floatTip) {
         floatTip = document.createElement('div');
         floatTip.id = 'weather-float-tip';
+        // 添加一点基础样式确保提示框可用，实际样式可以在CSS中定义
+        floatTip.style.position = 'fixed';
+        floatTip.style.display = 'none';
+        floatTip.style.zIndex = '9999';
+        floatTip.style.background = 'rgba(0,0,0,0.8)';
+        floatTip.style.color = '#fff';
+        floatTip.style.padding = '5px 10px';
+        floatTip.style.borderRadius = '4px';
+        floatTip.style.fontSize = '12px';
+        floatTip.style.pointerEvents = 'none';
         document.body.appendChild(floatTip);
     }
 
-    fetch(apiUrl)
-        .then(res => res.json())
-        .then(res => {
-            if (res.code === 200) {
-                const w = res.data.weather;
-                const air = res.data.air_quality;
-                const loc = res.data.location;
-                const indices = res.data.life_indices;
-                const getIndex = (key, name) => indices.find(i => i.key === key) || { name, level: '-', description: '暂无' };
-                const clothes = getIndex('clothes', '穿衣');
-                const comfort = getIndex('comfort', '舒适度');
-                
-                container.innerHTML = `
-                    <span class="w-item">📍 ${loc.city}</span><span class="w-split">|</span>
-                    <span class="w-item"><b>${w.condition}</b> ${w.temperature}°C</span><span class="w-split">|</span>
-                    <span class="w-item">🌬️ ${w.wind_direction} ${w.wind_power}级</span><span class="w-split">|</span>
-                    <span class="w-item">🍃 空气${air.quality} ${air.aqi}</span><span class="w-split">|</span>
-                    <span class="w-item w-interactive" data-desc="${clothes.description}">👕 ${clothes.name}: ${clothes.level}</span><span class="w-split">|</span>
-                    <span class="w-item w-interactive" data-desc="${comfort.description}">😌 ${comfort.name}: ${comfort.level}</span>
-                `;
+    // 2. 核心加载函数
+    const loadWeather = (city) => {
+        container.innerHTML = '<span>⌛ 正在加载天气...</span>';
+        
+        // 对中文城市名进行编码
+        const apiUrl = `https://60s.viki.moe/v2/weather?query=${encodeURIComponent(city)}`;
 
-                container.querySelectorAll('.w-interactive').forEach(item => {
-                    item.addEventListener('mouseenter', (e) => {
-                        floatTip.textContent = item.getAttribute('data-desc');
-                        floatTip.style.display = 'block';
-                        updatePos(e, floatTip);
-                    });
-                    item.addEventListener('mousemove', (e) => updatePos(e, floatTip));
-                    item.addEventListener('mouseleave', () => floatTip.style.display = 'none');
-                });
-            } else { container.innerText = '❌ 天气加载失败'; }
-        })
-        .catch(() => container.innerText = '❌ 天气服务不可用');
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(res => {
+                if (res.code === 200) {
+                    const w = res.data.weather;
+                    const air = res.data.air_quality;
+                    const loc = res.data.location;
+                    const indices = res.data.life_indices;
+                    const getIndex = (key, name) => indices.find(i => i.key === key) || { name, level: '-', description: '暂无' };
+                    const clothes = getIndex('clothes', '穿衣');
+                    const comfort = getIndex('comfort', '舒适度');
+
+                    // 注意：给城市 span 添加了 cursor: pointer 和 onclick 事件
+                    // 还在 title 提示用户可以点击
+                    container.innerHTML = `
+                        <span class="w-item w-city" id="weather-city-btn" title="点击切换城市" style="cursor:pointer;border-bottom: 1px dashed currentColor">📍 ${loc.city}</span><span class="w-split">|</span>
+                        <span class="w-item"><b>${w.condition}</b> ${w.temperature}°C</span><span class="w-split">|</span>
+                        <span class="w-item">🌬️ ${w.wind_direction} ${w.wind_power}级</span><span class="w-split">|</span>
+                        <span class="w-item">🍃 空气${air.quality} ${air.aqi}</span><span class="w-split">|</span>
+                        <span class="w-item w-interactive" data-desc="${clothes.description}">👕 ${clothes.name}: ${clothes.level}</span><span class="w-split">|</span>
+                        <span class="w-item w-interactive" data-desc="${comfort.description}">😌 ${comfort.name}: ${comfort.level}</span>
+                    `;
+
+                    // 重新绑定交互事件
+                    bindInteractions();
+                    // 绑定切换城市事件
+                    bindCityChange(loc.city);
+
+                } else {
+                    container.innerHTML = `<span style="color:red; cursor:pointer;" id="weather-retry">❌ 未找到"${city}"，点击重试</span>`;
+                    document.getElementById('weather-retry').addEventListener('click', () => changeCityUI());
+                }
+            })
+            .catch((e) => {
+                console.error(e);
+                container.innerText = '❌ 天气服务不可用';
+            });
+    };
+
+    // 3. 绑定悬浮提示交互
+    function bindInteractions() {
+        container.querySelectorAll('.w-interactive').forEach(item => {
+            item.addEventListener('mouseenter', (e) => {
+                floatTip.textContent = item.getAttribute('data-desc');
+                floatTip.style.display = 'block';
+                updatePos(e, floatTip);
+            });
+            item.addEventListener('mousemove', (e) => updatePos(e, floatTip));
+            item.addEventListener('mouseleave', () => floatTip.style.display = 'none');
+        });
+    }
+
+    // 4. 绑定城市切换逻辑 (点击后变成输入框)
+    function bindCityChange(currentDisplayCity) {
+        const cityBtn = document.getElementById('weather-city-btn');
+        if(cityBtn) {
+            cityBtn.addEventListener('click', () => changeCityUI(currentDisplayCity));
+        }
+    }
+
+    // 切换为输入框 UI 的逻辑
+    function changeCityUI(oldCityName = '') {
+        // 防止重复点击清空容器
+        if(document.getElementById('weather-city-input')) return;
+
+        container.innerHTML = `
+            <span>📍 </span>
+            <input type="text" id="weather-city-input" value="${oldCityName}" 
+                   style="width: 80px; padding: 2px; border: 1px solid #ccc; border-radius: 4px; outline: none;" 
+                   placeholder="输入城市">
+            <button id="weather-city-save" style="cursor:pointer; margin-left:5px;">确定</button>
+            <button id="weather-city-cancel" style="cursor:pointer; margin-left:5px;">取消</button>
+        `;
+        
+        const input = document.getElementById('weather-city-input');
+        const saveBtn = document.getElementById('weather-city-save');
+        const cancelBtn = document.getElementById('weather-city-cancel');
+
+        input.focus();
+        input.select(); // 自动全选文本，方便直接输入替换
+
+        // 确认修改逻辑
+        const confirmChange = () => {
+            const newCity = input.value.trim();
+            if (newCity) {
+                currentCity = newCity;
+                localStorage.setItem(STORAGE_KEY, newCity); // 保存到本地
+                loadWeather(newCity); // 重新加载
+            } else {
+                // 如果输入为空，恢复旧的
+                loadWeather(currentCity);
+            }
+        };
+
+        // 绑定事件：回车确认，ESC取消
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') confirmChange();
+            if (e.key === 'Escape') loadWeather(currentCity);
+        });
+        saveBtn.addEventListener('click', confirmChange);
+        cancelBtn.addEventListener('click', () => loadWeather(currentCity));
+    }
 
     function updatePos(e, tip) {
         const x = e.clientX + 15, y = e.clientY + 15;
         tip.style.left = (x + tip.offsetWidth > window.innerWidth ? e.clientX - tip.offsetWidth - 10 : x) + 'px';
         tip.style.top = y + 'px';
     }
+
+    // 启动默认加载
+    loadWeather(currentCity);
 }
 
 
